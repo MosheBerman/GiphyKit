@@ -13,6 +13,9 @@
 		463562341F5320020088119C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 463562331F5320020088119C /* Assets.xcassets */; };
 		463562371F5320020088119C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 463562351F5320020088119C /* LaunchScreen.storyboard */; };
 		463562421F5320020088119C /* GIFSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463562411F5320020088119C /* GIFSearchTests.swift */; };
+		4635624D1F5322430088119C /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4635624C1F5322430088119C /* DashboardViewModel.swift */; };
+		4635624F1F53227F0088119C /* GiphySearchClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4635624E1F53227F0088119C /* GiphySearchClient.swift */; };
+		463562571F5323220088119C /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463562561F5323220088119C /* APIKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,9 @@
 		4635623D1F5320020088119C /* GIFSearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GIFSearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		463562411F5320020088119C /* GIFSearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIFSearchTests.swift; sourceTree = "<group>"; };
 		463562431F5320020088119C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4635624C1F5322430088119C /* DashboardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DashboardViewModel.swift; path = ViewModel/DashboardViewModel.swift; sourceTree = "<group>"; };
+		4635624E1F53227F0088119C /* GiphySearchClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GiphySearchClient.swift; path = Controllers/Giphy/GiphySearchClient.swift; sourceTree = "<group>"; };
+		463562561F5323220088119C /* APIKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIKey.swift; path = Model/APIKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,12 +83,12 @@
 		4635622B1F5320020088119C /* GIFSearch */ = {
 			isa = PBXGroup;
 			children = (
+				463562551F5322F20088119C /* Model */,
 				4635622C1F5320020088119C /* AppDelegate.swift */,
-				4635622E1F5320020088119C /* ViewController.swift */,
-				463562301F5320020088119C /* Main.storyboard */,
+				463562541F5322D00088119C /* App Boilerplate */,
+				463562511F5322B40088119C /* ViewModel */,
+				463562501F5322860088119C /* Controllers */,
 				463562331F5320020088119C /* Assets.xcassets */,
-				463562351F5320020088119C /* LaunchScreen.storyboard */,
-				463562381F5320020088119C /* Info.plist */,
 			);
 			path = GIFSearch;
 			sourceTree = "<group>";
@@ -94,6 +100,57 @@
 				463562431F5320020088119C /* Info.plist */,
 			);
 			path = GIFSearchTests;
+			sourceTree = "<group>";
+		};
+		463562501F5322860088119C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				463562531F5322C40088119C /* View Controllers */,
+				463562521F5322BD0088119C /* Giphy Search */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		463562511F5322B40088119C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4635624C1F5322430088119C /* DashboardViewModel.swift */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		463562521F5322BD0088119C /* Giphy Search */ = {
+			isa = PBXGroup;
+			children = (
+				4635624E1F53227F0088119C /* GiphySearchClient.swift */,
+			);
+			name = "Giphy Search";
+			sourceTree = "<group>";
+		};
+		463562531F5322C40088119C /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4635622E1F5320020088119C /* ViewController.swift */,
+				463562301F5320020088119C /* Main.storyboard */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		463562541F5322D00088119C /* App Boilerplate */ = {
+			isa = PBXGroup;
+			children = (
+				463562351F5320020088119C /* LaunchScreen.storyboard */,
+				463562381F5320020088119C /* Info.plist */,
+			);
+			name = "App Boilerplate";
+			sourceTree = "<group>";
+		};
+		463562551F5322F20088119C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				463562561F5323220088119C /* APIKey.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,8 +258,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4635624F1F53227F0088119C /* GiphySearchClient.swift in Sources */,
 				4635622F1F5320020088119C /* ViewController.swift in Sources */,
+				4635624D1F5322430088119C /* DashboardViewModel.swift in Sources */,
 				4635622D1F5320020088119C /* AppDelegate.swift in Sources */,
+				463562571F5323220088119C /* APIKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +474,7 @@
 				463562481F5320020088119C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		463562491F5320020088119C /* Build configuration list for PBXNativeTarget "GIFSearchTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +483,7 @@
 				4635624B1F5320020088119C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
