@@ -23,6 +23,7 @@
 		4635626C1F54B91C0088119C /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4635626B1F54B91C0088119C /* Formatters.swift */; };
 		4635626E1F54BB350088119C /* RenditionFileType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4635626D1F54BB350088119C /* RenditionFileType.swift */; };
 		463562701F54BB8D0088119C /* RenditionFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4635626F1F54BB8D0088119C /* RenditionFile.swift */; };
+		463562721F54DC7D0088119C /* RenditionFileType+Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463562711F54DC7D0088119C /* RenditionFileType+Keys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		4635626B1F54B91C0088119C /* Formatters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Formatters.swift; path = Model/Formatters.swift; sourceTree = "<group>"; };
 		4635626D1F54BB350088119C /* RenditionFileType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RenditionFileType.swift; path = Model/RenditionFileType.swift; sourceTree = "<group>"; };
 		4635626F1F54BB8D0088119C /* RenditionFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RenditionFile.swift; path = Model/RenditionFile.swift; sourceTree = "<group>"; };
+		463562711F54DC7D0088119C /* RenditionFileType+Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "RenditionFileType+Keys.swift"; path = "Model/RenditionFileType+Keys.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 				463562671F5493CE0088119C /* Rendition.swift */,
 				463562691F549B920088119C /* RenditionDesignation.swift */,
 				4635626D1F54BB350088119C /* RenditionFileType.swift */,
+				463562711F54DC7D0088119C /* RenditionFileType+Keys.swift */,
 				4635626F1F54BB8D0088119C /* RenditionFile.swift */,
 			);
 			name = Model;
@@ -283,6 +286,7 @@
 				463562631F548CDB0088119C /* GIF.swift in Sources */,
 				4635626A1F549B920088119C /* RenditionDesignation.swift in Sources */,
 				4635626E1F54BB350088119C /* RenditionFileType.swift in Sources */,
+				463562721F54DC7D0088119C /* RenditionFileType+Keys.swift in Sources */,
 				4635622F1F5320020088119C /* DashboardViewController.swift in Sources */,
 				4635624D1F5322430088119C /* DashboardViewModel.swift in Sources */,
 				4635622D1F5320020088119C /* AppDelegate.swift in Sources */,
