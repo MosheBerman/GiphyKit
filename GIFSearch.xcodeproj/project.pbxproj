@@ -16,6 +16,13 @@
 		4635624D1F5322430088119C /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4635624C1F5322430088119C /* DashboardViewModel.swift */; };
 		4635624F1F53227F0088119C /* GiphySearchClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4635624E1F53227F0088119C /* GiphySearchClient.swift */; };
 		4635625F1F546F070088119C /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4635625E1F546F070088119C /* APIKey.swift */; };
+		463562611F547A1F0088119C /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463562601F547A1F0088119C /* Rating.swift */; };
+		463562631F548CDB0088119C /* GIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463562621F548CDB0088119C /* GIF.swift */; };
+		463562681F5493CE0088119C /* Rendition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463562671F5493CE0088119C /* Rendition.swift */; };
+		4635626A1F549B920088119C /* RenditionDesignation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463562691F549B920088119C /* RenditionDesignation.swift */; };
+		4635626C1F54B91C0088119C /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4635626B1F54B91C0088119C /* Formatters.swift */; };
+		4635626E1F54BB350088119C /* RenditionFileType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4635626D1F54BB350088119C /* RenditionFileType.swift */; };
+		463562701F54BB8D0088119C /* RenditionFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4635626F1F54BB8D0088119C /* RenditionFile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +49,13 @@
 		4635624C1F5322430088119C /* DashboardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DashboardViewModel.swift; path = ViewModel/DashboardViewModel.swift; sourceTree = "<group>"; };
 		4635624E1F53227F0088119C /* GiphySearchClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GiphySearchClient.swift; path = Controllers/Giphy/GiphySearchClient.swift; sourceTree = "<group>"; };
 		4635625E1F546F070088119C /* APIKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIKey.swift; path = Model/APIKey.swift; sourceTree = "<group>"; };
+		463562601F547A1F0088119C /* Rating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Rating.swift; path = Model/Rating.swift; sourceTree = "<group>"; };
+		463562621F548CDB0088119C /* GIF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GIF.swift; path = Model/GIF.swift; sourceTree = "<group>"; };
+		463562671F5493CE0088119C /* Rendition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Rendition.swift; path = Model/Rendition.swift; sourceTree = "<group>"; };
+		463562691F549B920088119C /* RenditionDesignation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RenditionDesignation.swift; path = Model/RenditionDesignation.swift; sourceTree = "<group>"; };
+		4635626B1F54B91C0088119C /* Formatters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Formatters.swift; path = Model/Formatters.swift; sourceTree = "<group>"; };
+		4635626D1F54BB350088119C /* RenditionFileType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RenditionFileType.swift; path = Model/RenditionFileType.swift; sourceTree = "<group>"; };
+		4635626F1F54BB8D0088119C /* RenditionFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RenditionFile.swift; path = Model/RenditionFile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +163,13 @@
 			isa = PBXGroup;
 			children = (
 				4635625E1F546F070088119C /* APIKey.swift */,
+				4635626B1F54B91C0088119C /* Formatters.swift */,
+				463562621F548CDB0088119C /* GIF.swift */,
+				463562601F547A1F0088119C /* Rating.swift */,
+				463562671F5493CE0088119C /* Rendition.swift */,
+				463562691F549B920088119C /* RenditionDesignation.swift */,
+				4635626D1F54BB350088119C /* RenditionFileType.swift */,
+				4635626F1F54BB8D0088119C /* RenditionFile.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -259,10 +280,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				4635624F1F53227F0088119C /* GiphySearchClient.swift in Sources */,
+				463562631F548CDB0088119C /* GIF.swift in Sources */,
+				4635626A1F549B920088119C /* RenditionDesignation.swift in Sources */,
+				4635626E1F54BB350088119C /* RenditionFileType.swift in Sources */,
 				4635622F1F5320020088119C /* DashboardViewController.swift in Sources */,
 				4635624D1F5322430088119C /* DashboardViewModel.swift in Sources */,
 				4635622D1F5320020088119C /* AppDelegate.swift in Sources */,
+				463562611F547A1F0088119C /* Rating.swift in Sources */,
 				4635625F1F546F070088119C /* APIKey.swift in Sources */,
+				4635626C1F54B91C0088119C /* Formatters.swift in Sources */,
+				463562701F54BB8D0088119C /* RenditionFile.swift in Sources */,
+				463562681F5493CE0088119C /* Rendition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
