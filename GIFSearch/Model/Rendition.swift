@@ -21,7 +21,7 @@ class Rendition: NSObject {
     /// The size of the rendition.
     let dimensions: CGSize
     
-    
+    let files: [RenditionFile]
     
     // MARK: - Initializing a Rendition
     
@@ -30,12 +30,12 @@ class Rendition: NSObject {
     /// - Parameters:
     ///   - designation: The designation of the rendition
     ///   - json: A JSON dictionary containing rendition information
-    init?(with designation: RenditionDesignation, and JSON: [String: Any])
+    init?(with designation: RenditionDesignation, and json: [String: Any])
     {
         self.designation = designation
         
-        guard let widthString = JSON["width"] as? String,
-            let heightString = JSON["height"] as? String,
+        guard let widthString = json["width"] as? String,
+            let heightString = json["height"] as? String,
             let width = numberFormatter.number(from: widthString),
             let height = numberFormatter.number(from: heightString)
             else
@@ -44,6 +44,18 @@ class Rendition: NSObject {
         }
         
         self.dimensions = CGSize(width: width.intValue, height: height.intValue)
+        
+        var files: [RenditionFile] = []
+        
+        for fileType in [RenditionFileType.gif, .mp4, .webp]
+        {
+            if let renditionFile = RenditionFile(of: fileType, with: json)
+            {
+                files.append(renditionFile)
+            }
+        }
+        
+        self.files = files
         
         super.init()
     }
