@@ -10,11 +10,12 @@ import Foundation
 
 /// These describe the file formats offered by the renditions API.
 ///
-/// - gif: The GIF format.
-/// - mp4: The MP4 file format.
-/// - webp: The webp file format.
-enum RenditionFileType {
-    case gif
-    case mp4
-    case webp
+/// - gif: The GIF format. See https://en.wikipedia.org/wiki/GIF for more.
+/// - mp4: The MP4 file format. See https://en.wikipedia.org/wiki/MPEG-4_Part_14 for more.
+/// - webp: A file format by Google. See https://developers.google.com/speed/webp/ for more.
+enum RenditionFileType: String {
+    case gif = "gif"
+    case mp4 = "mp4"
+    case webp = "webp"
 }
+
