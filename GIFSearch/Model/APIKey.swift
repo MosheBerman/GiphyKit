@@ -9,4 +9,4 @@
 import Foundation
 
 /// Put your GIPHY API Key here
-let APIKey: String = ""
+let APIKey: String = "foo"
