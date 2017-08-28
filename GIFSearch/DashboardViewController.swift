@@ -11,6 +11,7 @@ import UIKit
 class DashboardViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    private let viewModel = DashboardViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
