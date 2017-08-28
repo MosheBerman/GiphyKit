@@ -15,7 +15,7 @@
 		463562421F5320020088119C /* GIFSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463562411F5320020088119C /* GIFSearchTests.swift */; };
 		4635624D1F5322430088119C /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4635624C1F5322430088119C /* DashboardViewModel.swift */; };
 		4635624F1F53227F0088119C /* GiphySearchClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4635624E1F53227F0088119C /* GiphySearchClient.swift */; };
-		463562571F5323220088119C /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463562561F5323220088119C /* APIKey.swift */; };
+		4635625D1F546DB80088119C /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4635625C1F546DB80088119C /* APIKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +41,7 @@
 		463562431F5320020088119C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4635624C1F5322430088119C /* DashboardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DashboardViewModel.swift; path = ViewModel/DashboardViewModel.swift; sourceTree = "<group>"; };
 		4635624E1F53227F0088119C /* GiphySearchClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GiphySearchClient.swift; path = Controllers/Giphy/GiphySearchClient.swift; sourceTree = "<group>"; };
-		463562561F5323220088119C /* APIKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIKey.swift; path = Model/APIKey.swift; sourceTree = "<group>"; };
+		4635625C1F546DB80088119C /* APIKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIKey.swift; path = "Mode;/APIKey.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,7 +148,7 @@
 		463562551F5322F20088119C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				463562561F5323220088119C /* APIKey.swift */,
+				4635625C1F546DB80088119C /* APIKey.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -262,7 +262,7 @@
 				4635622F1F5320020088119C /* ViewController.swift in Sources */,
 				4635624D1F5322430088119C /* DashboardViewModel.swift in Sources */,
 				4635622D1F5320020088119C /* AppDelegate.swift in Sources */,
-				463562571F5323220088119C /* APIKey.swift in Sources */,
+				4635625D1F546DB80088119C /* APIKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
