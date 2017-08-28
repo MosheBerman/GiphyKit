@@ -93,7 +93,7 @@ class GIF: NSObject {
     // MARK: - Initializing a Result
     
     /// Optional initializer, per https://developer.apple.com/swift/blog/?id=37
-    init?(json: [String: Any])
+    init?(with json: [String: Any])
     {
         guard let type = json["type"] as? String,
             let id = json["id"] as? String,
