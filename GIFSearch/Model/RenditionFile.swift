@@ -19,6 +19,7 @@ class RenditionFile: NSObject {
     /// How large the file is, in bytes.
     let sizeInBytes: NSInteger
     
+    // MARK: - Initializing a rendition.
     
     init?(of type: RenditionFileType, with json: [String: Any])
     {
