@@ -8,14 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		4635622D1F5320020088119C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4635622C1F5320020088119C /* AppDelegate.swift */; };
-		4635622F1F5320020088119C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4635622E1F5320020088119C /* ViewController.swift */; };
+		4635622F1F5320020088119C /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4635622E1F5320020088119C /* DashboardViewController.swift */; };
 		463562321F5320020088119C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 463562301F5320020088119C /* Main.storyboard */; };
 		463562341F5320020088119C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 463562331F5320020088119C /* Assets.xcassets */; };
 		463562371F5320020088119C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 463562351F5320020088119C /* LaunchScreen.storyboard */; };
 		463562421F5320020088119C /* GIFSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463562411F5320020088119C /* GIFSearchTests.swift */; };
 		4635624D1F5322430088119C /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4635624C1F5322430088119C /* DashboardViewModel.swift */; };
 		4635624F1F53227F0088119C /* GiphySearchClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4635624E1F53227F0088119C /* GiphySearchClient.swift */; };
-		4635625D1F546DB80088119C /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4635625C1F546DB80088119C /* APIKey.swift */; };
+		4635625F1F546F070088119C /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4635625E1F546F070088119C /* APIKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,7 +31,7 @@
 /* Begin PBXFileReference section */
 		463562291F5320020088119C /* GIFSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GIFSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4635622C1F5320020088119C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4635622E1F5320020088119C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4635622E1F5320020088119C /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		463562311F5320020088119C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		463562331F5320020088119C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		463562361F5320020088119C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -41,7 +41,7 @@
 		463562431F5320020088119C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4635624C1F5322430088119C /* DashboardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DashboardViewModel.swift; path = ViewModel/DashboardViewModel.swift; sourceTree = "<group>"; };
 		4635624E1F53227F0088119C /* GiphySearchClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GiphySearchClient.swift; path = Controllers/Giphy/GiphySearchClient.swift; sourceTree = "<group>"; };
-		4635625C1F546DB80088119C /* APIKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIKey.swift; path = "Mode;/APIKey.swift"; sourceTree = "<group>"; };
+		4635625E1F546F070088119C /* APIKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIKey.swift; path = Model/APIKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,7 +130,7 @@
 		463562531F5322C40088119C /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				4635622E1F5320020088119C /* ViewController.swift */,
+				4635622E1F5320020088119C /* DashboardViewController.swift */,
 				463562301F5320020088119C /* Main.storyboard */,
 			);
 			name = "View Controllers";
@@ -148,7 +148,7 @@
 		463562551F5322F20088119C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4635625C1F546DB80088119C /* APIKey.swift */,
+				4635625E1F546F070088119C /* APIKey.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -259,10 +259,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4635624F1F53227F0088119C /* GiphySearchClient.swift in Sources */,
-				4635622F1F5320020088119C /* ViewController.swift in Sources */,
+				4635622F1F5320020088119C /* DashboardViewController.swift in Sources */,
 				4635624D1F5322430088119C /* DashboardViewModel.swift in Sources */,
 				4635622D1F5320020088119C /* AppDelegate.swift in Sources */,
-				4635625D1F546DB80088119C /* APIKey.swift in Sources */,
+				4635625F1F546F070088119C /* APIKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
