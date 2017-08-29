@@ -9,7 +9,7 @@
 import Foundation
 
 class RenditionFile: NSObject {
-
+    
     /// The format of the file.
     let fileType: RenditionFileType
     
@@ -24,10 +24,10 @@ class RenditionFile: NSObject {
     init?(of type: RenditionFileType, with json: [String: Any])
     {
         guard let sizeString = json[type.sizeKey] as? String,
-        let sizeNumber = numberFormatter.number(from: sizeString),
+            let sizeNumber = numberFormatter.number(from: sizeString),
             let address = json[type.rawValue] as? String,
             let url = URL(string: address)
-        else
+            else
         {
             return nil
         }
