@@ -15,6 +15,6 @@ import Foundation
 /// - failedToUnwrapJSONFromDataResponse: The data wasn't able to be understood by `NSJSONSerialization`.
 enum ErrorCode: Int
 {
-    case noDataInRespone
+    case noDataInResponse
     case failedToUnwrapJSONFromDataResponse
 }
