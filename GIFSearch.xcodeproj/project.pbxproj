@@ -24,6 +24,7 @@
 		4635626E1F54BB350088119C /* RenditionFileType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4635626D1F54BB350088119C /* RenditionFileType.swift */; };
 		463562701F54BB8D0088119C /* RenditionFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4635626F1F54BB8D0088119C /* RenditionFile.swift */; };
 		463562721F54DC7D0088119C /* RenditionFileType+Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463562711F54DC7D0088119C /* RenditionFileType+Keys.swift */; };
+		463562741F56050D0088119C /* ErrorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463562731F56050D0088119C /* ErrorCode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		4635626D1F54BB350088119C /* RenditionFileType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RenditionFileType.swift; path = Model/RenditionFileType.swift; sourceTree = "<group>"; };
 		4635626F1F54BB8D0088119C /* RenditionFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RenditionFile.swift; path = Model/RenditionFile.swift; sourceTree = "<group>"; };
 		463562711F54DC7D0088119C /* RenditionFileType+Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "RenditionFileType+Keys.swift"; path = "Model/RenditionFileType+Keys.swift"; sourceTree = "<group>"; };
+		463562731F56050D0088119C /* ErrorCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ErrorCode.swift; path = Model/ErrorCode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 				4635626D1F54BB350088119C /* RenditionFileType.swift */,
 				463562711F54DC7D0088119C /* RenditionFileType+Keys.swift */,
 				4635626F1F54BB8D0088119C /* RenditionFile.swift */,
+				463562731F56050D0088119C /* ErrorCode.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				4635624F1F53227F0088119C /* GiphySearchClient.swift in Sources */,
 				463562631F548CDB0088119C /* GIF.swift in Sources */,
 				4635626A1F549B920088119C /* RenditionDesignation.swift in Sources */,
+				463562741F56050D0088119C /* ErrorCode.swift in Sources */,
 				4635626E1F54BB350088119C /* RenditionFileType.swift in Sources */,
 				463562721F54DC7D0088119C /* RenditionFileType+Keys.swift in Sources */,
 				4635622F1F5320020088119C /* DashboardViewController.swift in Sources */,
