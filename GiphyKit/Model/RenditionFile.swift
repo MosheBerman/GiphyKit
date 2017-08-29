@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// This class represents a specific rendition of the GIF. 
 public class RenditionFile: NSObject {
     
     /// The format of the file.
@@ -19,7 +20,7 @@ public class RenditionFile: NSObject {
     /// How large the file is, in bytes.
     public let sizeInBytes: NSInteger
     
-    // MARK: - Initializing a rendition.
+    // MARK: - Initializing a Rendition
     
     public init?(of type: RenditionFileType, with json: [String: Any])
     {
