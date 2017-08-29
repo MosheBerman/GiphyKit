@@ -30,7 +30,7 @@ import Foundation
 /// - original - Original file size and file dimensions. Good for desktop use.
 /// - originalStill - Preview image for original
 /// - looping - Duration set to loop for 15 seconds. Only recommended for this exact use case.
-enum RenditionDesignation: String {
+public enum RenditionDesignation: String {
     case fixedHeight = "fixed_height"
     case fixedHeightStill = "fixed_height_still"
     case fixedHeightDownsampled = "fixed_height_downsampled"

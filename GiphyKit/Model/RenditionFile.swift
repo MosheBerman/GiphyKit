@@ -8,20 +8,20 @@
 
 import Foundation
 
-class RenditionFile: NSObject {
+public class RenditionFile: NSObject {
     
     /// The format of the file.
-    let fileType: RenditionFileType
+    public let fileType: RenditionFileType
     
     /// The URL for the file.
-    let url: URL
+    public let url: URL
     
     /// How large the file is, in bytes.
-    let sizeInBytes: NSInteger
+    public let sizeInBytes: NSInteger
     
     // MARK: - Initializing a rendition.
     
-    init?(of type: RenditionFileType, with json: [String: Any])
+    public init?(of type: RenditionFileType, with json: [String: Any])
     {
         guard let sizeString = json[type.sizeKey] as? String,
             let sizeNumber = numberFormatter.number(from: sizeString),

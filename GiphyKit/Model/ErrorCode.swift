@@ -13,7 +13,7 @@ import Foundation
 ///
 /// - noDataInRespone: The URLSessionTask called the handler block with no data.
 /// - failedToUnwrapJSONFromDataResponse: The data wasn't able to be understood by `NSJSONSerialization`.
-enum ErrorCode: Int
+public enum ErrorCode: Int
 {
     case noDataInResponse
     case failedToUnwrapJSONFromDataResponse

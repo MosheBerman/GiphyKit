@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>GiphyKit.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -18,6 +23,16 @@
 			<true/>
 		</dict>
 		<key>4635623C1F5320020088119C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4635627B1F5627590088119C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>463562831F5627590088119C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

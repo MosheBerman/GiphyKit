@@ -15,7 +15,7 @@ import Foundation
 /// - pg13: Represents the PG-13 rating.
 /// - r: Represents the R rating.
 /// - unrated: Represents a situation where the client can't parse a rating.
-enum Rating: String {
+public enum Rating: String {
     case g = "G"
     case pg = "PG"
     case pg13 = "PG-13"

@@ -11,17 +11,17 @@ import CoreGraphics
 
 /// Each rendition of a GIF is a modified version to have a specific size, scale, etc.
 /// The name rendition comes from the Giphy documentation.
-class Rendition: NSObject {
+public class Rendition: NSObject {
     
     /// The kind of rendition.
-    let designation: RenditionDesignation
+    public let designation: RenditionDesignation
     
     // MARK: - The Dimensions of the Rendition
     
     /// The size of the rendition.
-    let dimensions: CGSize
+    public let dimensions: CGSize
     
-    let files: [RenditionFile]
+    public let files: [RenditionFile]
     
     // MARK: - Initializing a Rendition
     
@@ -30,7 +30,7 @@ class Rendition: NSObject {
     /// - Parameters:
     ///   - designation: The designation of the rendition
     ///   - json: A JSON dictionary containing rendition information
-    init?(with designation: RenditionDesignation, and json: [String: Any])
+    public init?(with designation: RenditionDesignation, and json: [String: Any])
     {
         self.designation = designation
         

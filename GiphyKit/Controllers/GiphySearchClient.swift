@@ -8,7 +8,7 @@
 
 import Foundation
 
-class GiphySearchClient: NSObject {
+public class GiphySearchClient: NSObject {
     
     // MARK: - The Client API Key
     
@@ -43,7 +43,7 @@ class GiphySearchClient: NSObject {
     
     // MARK: - Initializing the API Client
     
-    init(with key: String)
+    public init(with key: String)
     {
         self.apiKey = key
         self.rootEndpoint = URL(string:"https://api.giphy.com/v1")!

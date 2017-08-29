@@ -13,28 +13,28 @@ import Foundation
 /// The structure of this object is based closely on the
 /// documentation outlined at https://developers.giphy.com/docs/.
 ///
-/// The order of the properties differs from the Giphy documentation 
-/// to better document the purpose of each field, and some of the types 
+/// The order of the properties differs from the Giphy documentation
+/// to better document the purpose of each field, and some of the types
 /// have been changed from `String` to better match Swift/Cocoa convention.
-class GIF: NSObject {
-
+public class GIF: NSObject {
+    
     /// The type of result. Usually `gif`.
-    let type: String
+    public let type: String
     
     /// The GIF's identifier. Used to access the asset on GIPHY.com.
-    let identifier: String
+    public let identifier: String
     
     // MARK: - Renditions of the GIF
     
-    var renditions: [RenditionDesignation: Rendition]
+    public var renditions: [RenditionDesignation: Rendition]
     
     // MARK: - Accessing the Image on Giphy
     
     /// The GIPHY slug
-    let slug: String
+    public let slug: String
     
     /// A URL to access the asset
-    var url: URL? {
+    public var url: URL? {
         let address = "https://giphy.com/gifs/\(self.slug)"
         return URL(string: address)
     }
@@ -42,58 +42,58 @@ class GIF: NSObject {
     // MARK: - Sorting/Filtering the GIF
     
     // The rating of the asset.
-    var rating: Rating
+    public var rating: Rating
     
     /// A list of tags assigned to the GIF
-    var tags: [String]
+    public var tags: [String]
     
     /// A list of featured tags assigned to the GIF.
-    var featuredTags: [String]
+    public var featuredTags: [String]
     
     // MARK: - Sharing the GIF
     
     /// The Bit.ly URL for the gif.
-    var bitlyURL: URL?
+    public var bitlyURL: URL?
     
     // MARK: - Embedding the GIF
     
     /// The URL used to embed in a webpage.
-    var embedURL: URL?
+    public var embedURL: URL?
     
     // MARK: - Attributing a GIF
     
     /// The URL of the webpage on which this GIF was found.
-    var source: URL?
+    public var source: URL?
     
     /// The TLD of the website on which this GIF was found.
-    var sourceTLD: URL?
+    public var sourceTLD: URL?
     
     /// The URL of the post in which this GIF was found.
-    var sourcePost: URL?
+    public var sourcePost: URL?
     
     /// The username associated with the GIF.
-    var username: String
+    public var username: String
     
     // MARK: - Determining the Age of the GIF
     
     /// A timestamp when the images was added to the Giphy database.
-    var createTimestamp: Date
+    public var createTimestamp: Date
     
     /// A timestamp when the GIF was updated.
-    var updateTimestamp: Date?
+    public var updateTimestamp: Date?
     
     /// A timestamp when the GIF was updated.
-    var trendingTimestamp: Date?
+    public var trendingTimestamp: Date?
     
     // MARK: - Unused Properties
     
     /// The Giphy Docs say this is unused.
-    var contentURL: String? = nil
+    public var contentURL: String? = nil
     
     // MARK: - Initializing a Result
     
     /// Optional initializer, per https://developer.apple.com/swift/blog/?id=37
-    init?(with json: [String: Any])
+    public init?(with json: [String: Any])
     {
         guard let type = json["type"] as? String,
             let id = json["id"] as? String,
