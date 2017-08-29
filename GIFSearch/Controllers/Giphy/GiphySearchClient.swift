@@ -13,22 +13,27 @@ class GiphySearchClient: NSObject {
     // MARK: - The Client API Key
     
     /// Replace this with your API key.
-    private let apiKey: String = APIKey
+    private(set) var apiKey: String
     
     // MARK: - Endpoints
     
     /// The GIPHY root endpoint.
-    private var rootEndpoint: URLComponents
+    private var rootEndpoint: URL
+    
+    private var rootEndpointComponents: URLComponents?
+    {
+        return URLComponents(url: self.rootEndpoint, resolvingAgainstBaseURL: false)
+    }
     
     /// The endpoint for trending
     private var trendingEndpoint: URL? {
-        var components = self.rootEndpoint
-        components.path = "trending"
-        components.queryItems = [
+        var components = self.rootEndpointComponents
+        components?.path = "trending"
+        components?.queryItems = [
             URLQueryItem(name: "api_key", value: self.apiKey)
         ]
         
-        guard let url = components.url else
+        guard let url = components?.url else
         {
             return nil
         }
@@ -36,14 +41,12 @@ class GiphySearchClient: NSObject {
         return url
     }
     
+    // MARK: - Initializing the API Client
     
-    // MARK: -
-    
-    override init() {
-        
-        self.rootEndpoint = URLComponents(string: "https://api.giphy.com/v1")!
-        
-        super.init()
+    init(with key: String)
+    {
+        self.apiKey = key
+        self.rootEndpoint = URL(string:"https://api.giphy.com/v1")!
     }
 
     // MARK: - Getting Trending GIFs.
@@ -57,7 +60,7 @@ class GiphySearchClient: NSObject {
     {
         guard let endpoint = self.trendingEndpoint else
         {
-            var error = NSError(domain: "com.gifyclient.endpoint", code: 1, userInfo: nil)
+            let error = NSError(domain: "com.gifyclient.endpoint", code: 1, userInfo: nil)
             completion(nil, error)
             return
         }
