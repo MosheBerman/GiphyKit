@@ -31,7 +31,7 @@ public class GiphySearchClient: NSObject {
     public init(with key: String)
     {
         self.apiKey = key
-        self.rootEndpoint = URL(string:"https://api.giphy.com/v1")!
+        self.rootEndpoint = URL(string:"https://api.giphy.com/")!
     }
     
     
@@ -62,10 +62,14 @@ public class GiphySearchClient: NSObject {
     
     /// The endpoint for trending
     private var trendingEndpoint: URL? {
-        var components = self.rootEndpointComponents
-        components?.path = "trending"
+        guard var components = self.rootEndpointComponents else
+        {
+            return nil
+        }
         
-        guard let url = components?.url else
+        components.path = "/v1/gifs/trending"
+        
+        guard let url = components.url else
         {
             return nil
         }
@@ -94,7 +98,7 @@ public class GiphySearchClient: NSObject {
         }
         
         var components = self.rootEndpointComponents
-        components?.path = "search"
+        components?.path = "/v1/gifs/search"
         components?.queryItems?.append(contentsOf: queryItems)
         
         guard let url = components?.url else
@@ -168,8 +172,9 @@ public class GiphySearchClient: NSObject {
                 {
                     
                     if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String:Any],
-                        let jsonOfGIFs = json["data"] as? [[String:String]]
+                        let jsonOfGIFs = json["data"] as? [[String:AnyObject]]
                     {
+                        gifs = []
                         for json in jsonOfGIFs
                         {
                             if let gif = GIF(with: json)
@@ -178,7 +183,8 @@ public class GiphySearchClient: NSObject {
                             }
                             else
                             {
-                                print("\(self.self) : Failed to process GIF for JSON: \(json)")
+                                print("\(self.self) : Failed to process GIF.")
+                                errorResponse = NSError(domain: "com.mosheberman.giphykit.url-session-failure", code: ErrorCode.failedToProcessGIF.rawValue, userInfo: nil)
                             }
                         }
                     }
