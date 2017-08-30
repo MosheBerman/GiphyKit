@@ -48,6 +48,16 @@
                ReferencedContainer = "container:GIFSearch.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "46ECAA8E1F574F9D003D7564"
+               BuildableName = "CacheKitTests.xctest"
+               BlueprintName = "CacheKitTests"
+               ReferencedContainer = "container:GIFSearch.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
