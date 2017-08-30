@@ -12,6 +12,7 @@ class DashboardViewController: UIViewController, UICollectionViewDataSource {
 
     @IBOutlet weak var collectionView: UICollectionView!
     private let viewModel = DashboardViewModel()
+    private let speechController = SpeechController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +20,10 @@ class DashboardViewController: UIViewController, UICollectionViewDataSource {
         self.configureViewModel()
         self.configureCollectionView()
         self.viewModel.setNeedsRefresh()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,7 +39,6 @@ class DashboardViewController: UIViewController, UICollectionViewDataSource {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
         self.collectionView.refreshControl = refreshControl
-        
     }
     
     // MARK: - Configuring Our Response to ViewModel Updates
@@ -80,8 +84,6 @@ class DashboardViewController: UIViewController, UICollectionViewDataSource {
         
         if let gif = self.viewModel.gif(for: indexPath)
         {
-            
-            
             
         }
         
