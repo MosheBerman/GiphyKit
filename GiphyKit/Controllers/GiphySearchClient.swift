@@ -15,6 +15,7 @@ public class GiphySearchClient: NSObject {
     /// Replace this with your API key.
     private(set) var apiKey: String
     
+    
     // MARK: - Setting the Content Rating
     
     /// The rating to use for the requests.
@@ -24,25 +25,45 @@ public class GiphySearchClient: NSObject {
     // MARK: - Filtering by Region
     public var language: LanguageCode = .unitedStates
     
+    
+    // MARK: - Initializing the API Client
+    
+    public init(with key: String)
+    {
+        self.apiKey = key
+        self.rootEndpoint = URL(string:"https://api.giphy.com/v1")!
+    }
+    
+    
     // MARK: - Endpoints
     
     /// The GIPHY root endpoint.
     private var rootEndpoint: URL
     
+    /// Returns URL components
     private var rootEndpointComponents: URLComponents?
     {
-        return URLComponents(url: self.rootEndpoint, resolvingAgainstBaseURL: false)
+        let rootEndpointComponents = URLComponents(url: self.rootEndpoint, resolvingAgainstBaseURL: false)
+        
+        guard var components = rootEndpointComponents else
+        {
+            return nil
+        }
+        
+        // Set up some default components to send with each request.
+        components.queryItems = [
+            URLQueryItem(name: "api_key", value: self.apiKey),
+            URLQueryItem(name: "lang", value: self.language.rawValue),
+            URLQueryItem(name: "rating", value: self.rating.rawValue),
+        ]
+        
+        return components
     }
     
     /// The endpoint for trending
     private var trendingEndpoint: URL? {
         var components = self.rootEndpointComponents
         components?.path = "trending"
-        components?.queryItems = [
-            URLQueryItem(name: "api_key", value: self.apiKey),
-            URLQueryItem(name: "lang", value: self.language.rawValue),
-            URLQueryItem(name: "rating", value: self.rating.rawValue)
-        ]
         
         guard let url = components?.url else
         {
@@ -52,13 +73,39 @@ public class GiphySearchClient: NSObject {
         return url
     }
     
-    // MARK: - Initializing the API Client
-    
-    public init(with key: String)
+    /// Converts the supplied parameters into an endpoint for Search.
+    ///
+    /// - Parameters:
+    ///   - query: The search term.
+    ///   - limit: How many items to return.
+    ///   - offset: The offset from the first result.
+    /// - Returns: A URL based on the original endpoint.
+    private func searchEndpoint(with query: String, limit: Int = 25, offset: Int?) -> URL?
     {
-        self.apiKey = key
-        self.rootEndpoint = URL(string:"https://api.giphy.com/v1")!
+        
+        var queryItems = [
+            URLQueryItem(name: "q", value: query),
+            URLQueryItem(name: "limit", value: "\(limit)")
+        ]
+    
+        if let offset = offset
+        {
+            let offsetQuery = URLQueryItem(name: "offset", value: "\(offset)")
+            queryItems.append(offsetQuery)
+        }
+        
+        var components = self.rootEndpointComponents
+        components?.path = "search"
+        components?.queryItems?.append(contentsOf: queryItems)
+        
+        guard let url = components?.url else
+        {
+            return nil
+        }
+        
+        return url
     }
+    
     
     // MARK: - Getting Trending GIFs.
     
@@ -71,7 +118,7 @@ public class GiphySearchClient: NSObject {
     {
         guard let endpoint = self.trendingEndpoint else
         {
-            let error = NSError(domain: "com.gifyclient.endpoint", code: 1, userInfo: nil)
+            let error = NSError(domain: "com.mosheberman.giphykit.endpoint", code: ErrorCode.couldNotGenerateEndpoint.rawValue, userInfo: nil)
             completion(nil, error)
             return
         }
@@ -79,6 +126,30 @@ public class GiphySearchClient: NSObject {
         self.executeRequest(for: endpoint, with: completion)
     }
     
+    
+    // MARK: - Searching for a Specific GIF
+    
+    /// Searches the Giphy API and returns the results of the search
+    ///
+    /// - Parameters:
+    ///   - term: The search term.
+    ///   - limit: The number of results.
+    ///   - offset: The offset in pagination.
+    ///   - completion: The completion handler.
+    public func search(for term:String, limit:Int = 25, offset:Int = 0,  with completion:(@escaping ([GIF]?, NSError?)->Void))
+    {
+        guard let endpoint = self.searchEndpoint(with: term, limit: limit, offset: offset) else
+        {
+            let error = NSError(domain: "com.mosheberman.giphykit.endpoint", code: ErrorCode.couldNotGenerateEndpoint.rawValue, userInfo: nil)
+            completion(nil, error)
+            return
+        }
+        
+        self.executeRequest(for: endpoint, with: completion)
+    }
+    
+    
+    // MARK: - Executing a Network Request
     
     /// Executes a network request and then calls the handler when finished.
     ///
@@ -114,18 +185,18 @@ public class GiphySearchClient: NSObject {
                     }
                     else
                     {
-                        errorResponse = NSError(domain: "com.gifyclient.url-session-failure", code: ErrorCode.failedToUnwrapJSONFromDataResponse.rawValue, userInfo: nil)
+                        errorResponse = NSError(domain: "com.mosheberman.giphykit.url-session-failure", code: ErrorCode.failedToUnwrapJSONFromDataResponse.rawValue, userInfo: nil)
                     }
                     
                 }
                 catch
                 {
-                    errorResponse = NSError(domain: "com.gifyclient.url-session-failure", code: ErrorCode.failedToUnwrapJSONFromDataResponse.rawValue, userInfo: nil)
+                    errorResponse = NSError(domain: "com.mosheberman.giphykit.url-session-failure", code: ErrorCode.failedToUnwrapJSONFromDataResponse.rawValue, userInfo: nil)
                 }
             }
             else
             {
-                errorResponse = NSError(domain: "com.gifyclient.url-session-failure", code: ErrorCode.noDataInResponse.rawValue, userInfo: nil)
+                errorResponse = NSError(domain: "com.mosheberman.giphykit.url-session-failure", code: ErrorCode.noDataInResponse.rawValue, userInfo: nil)
             }
             
             completion(gifs, errorResponse)
