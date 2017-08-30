@@ -46,8 +46,9 @@ public class Rendition: NSObject {
         self.dimensions = CGSize(width: width.intValue, height: height.intValue)
         
         var files: [RenditionFile] = []
+        let types: [RenditionFileType] = [.gif, .mp4, .webp]
         
-        for fileType in [RenditionFileType.gif, .mp4, .webp]
+        for fileType in types
         {
             if let renditionFile = RenditionFile(of: fileType, with: json)
             {
