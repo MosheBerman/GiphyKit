@@ -82,7 +82,6 @@ public class GiphySearchClient: NSObject {
     /// - Returns: A URL based on the original endpoint.
     private func searchEndpoint(with query: String, limit: Int = 25, offset: Int?) -> URL?
     {
-        
         var queryItems = [
             URLQueryItem(name: "q", value: query),
             URLQueryItem(name: "limit", value: "\(limit)")
@@ -114,12 +113,12 @@ public class GiphySearchClient: NSObject {
     /// - Parameters:
     ///   - rating: The maximum filter rating to use with the request.
     ///   - completion: A completion handler to execute after downloading and processing the data.
-    public func trending(with completion:(@escaping ([GIF]?, NSError?)->Void))
+    public func trending(with completion:(@escaping ([GIF]?, URL?, NSError?)->Void))
     {
         guard let endpoint = self.trendingEndpoint else
         {
             let error = NSError(domain: "com.mosheberman.giphykit.endpoint", code: ErrorCode.couldNotGenerateEndpoint.rawValue, userInfo: nil)
-            completion(nil, error)
+            completion(nil, nil, error)
             return
         }
         
@@ -136,12 +135,12 @@ public class GiphySearchClient: NSObject {
     ///   - limit: The number of results.
     ///   - offset: The offset in pagination.
     ///   - completion: The completion handler.
-    public func search(for term:String, limit:Int = 25, offset:Int = 0,  with completion:(@escaping ([GIF]?, NSError?)->Void))
+    public func search(for term:String, limit:Int = 25, offset:Int = 0,  with completion:(@escaping ([GIF]?, URL?, NSError?)->Void))
     {
         guard let endpoint = self.searchEndpoint(with: term, limit: limit, offset: offset) else
         {
             let error = NSError(domain: "com.mosheberman.giphykit.endpoint", code: ErrorCode.couldNotGenerateEndpoint.rawValue, userInfo: nil)
-            completion(nil, error)
+            completion(nil, nil, error)
             return
         }
         
@@ -156,7 +155,7 @@ public class GiphySearchClient: NSObject {
     /// - Parameters:
     ///   - url: The URL to request from.
     ///   - completion: The completion handler to execute after downloading and processing data.
-    private func executeRequest(for url: URL, with completion:@escaping ([GIF]?, NSError?)->Void)
+    private func executeRequest(for url: URL, with completion:@escaping ([GIF]?, URL?, NSError?)->Void)
     {
         let task = URLSession.shared.dataTask(with: url) { (data:Data?, response:URLResponse?, error:Error?) in
             
@@ -199,7 +198,7 @@ public class GiphySearchClient: NSObject {
                 errorResponse = NSError(domain: "com.mosheberman.giphykit.url-session-failure", code: ErrorCode.noDataInResponse.rawValue, userInfo: nil)
             }
             
-            completion(gifs, errorResponse)
+            completion(gifs, url, errorResponse)
         }
         
         
