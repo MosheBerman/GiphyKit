@@ -30,6 +30,7 @@
 		463562B41F5627960088119C /* RenditionFileType+Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463562AB1F5627960088119C /* RenditionFileType+Keys.swift */; };
 		463562B51F5627960088119C /* RenditionFileType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463562AC1F5627960088119C /* RenditionFileType.swift */; };
 		463562BA1F5628500088119C /* GiphySearchClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463562B91F5628500088119C /* GiphySearchClient.swift */; };
+		463562BC1F5639A50088119C /* LanguageCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463562BB1F5639A50088119C /* LanguageCode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,7 @@
 		463562AB1F5627960088119C /* RenditionFileType+Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RenditionFileType+Keys.swift"; sourceTree = "<group>"; };
 		463562AC1F5627960088119C /* RenditionFileType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenditionFileType.swift; sourceTree = "<group>"; };
 		463562B91F5628500088119C /* GiphySearchClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiphySearchClient.swift; sourceTree = "<group>"; };
+		463562BB1F5639A50088119C /* LanguageCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageCode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,6 +262,7 @@
 				463562AA1F5627960088119C /* RenditionFile.swift */,
 				463562AB1F5627960088119C /* RenditionFileType+Keys.swift */,
 				463562AC1F5627960088119C /* RenditionFileType.swift */,
+				463562BB1F5639A50088119C /* LanguageCode.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -478,6 +481,7 @@
 				463562B11F5627960088119C /* Rendition.swift in Sources */,
 				463562AF1F5627960088119C /* GIF.swift in Sources */,
 				463562BA1F5628500088119C /* GiphySearchClient.swift in Sources */,
+				463562BC1F5639A50088119C /* LanguageCode.swift in Sources */,
 				463562AD1F5627960088119C /* ErrorCode.swift in Sources */,
 				463562B31F5627960088119C /* RenditionFile.swift in Sources */,
 				463562B21F5627960088119C /* RenditionDesignation.swift in Sources */,
