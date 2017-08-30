@@ -12,12 +12,18 @@ import GiphyKit
 class DashboardViewModel: NSObject {
 
     // MARK: - The API Client
+    
+    /// The API Client
     private let apiClient: GiphySearchClient
+    
+    /// The API Key
     private let apiKey:String = APIKey // Replace APIKey with your API Key
+    
     
     // MARK: - Accessing Data
     
     /// The gifs loaded by the most recent API client operation.
+    /// Offline/caching were not requirements.
     private(set) var gifs: [GIF]? = nil
     
     /// MARK: - Searching
