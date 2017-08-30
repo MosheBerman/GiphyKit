@@ -45,10 +45,10 @@ public class GIF: NSObject {
     public var rating: Rating
     
     /// A list of tags assigned to the GIF
-    public var tags: [String]
+    public var tags: [String]?
     
     /// A list of featured tags assigned to the GIF.
-    public var featuredTags: [String]
+    public var featuredTags: [String]?
     
     // MARK: - Sharing the GIF
     
@@ -77,13 +77,16 @@ public class GIF: NSObject {
     // MARK: - Determining the Age of the GIF
     
     /// A timestamp when the images was added to the Giphy database.
-    public var createTimestamp: Date
+    public var createTimestamp: Date?
     
     /// A timestamp when the GIF was updated.
     public var updateTimestamp: Date?
     
     /// A timestamp when the GIF was updated.
     public var trendingTimestamp: Date?
+    
+    /// A timestamp of when the GIF was imported
+    public var importTimestamp: Date?
     
     // MARK: - Unused Properties
     
@@ -95,28 +98,57 @@ public class GIF: NSObject {
     /// Optional initializer, per https://developer.apple.com/swift/blog/?id=37
     public init?(with json: [String: Any])
     {
-        guard let type = json["type"] as? String,
-            let id = json["id"] as? String,
-            let slug = json["slug"] as? String,
-            let rating = json["rating"] as? String,
-            let bitly = json["bitly_url"] as? String,
-            let embed = json["embed_url"] as? String,
-            let sourceTLDAddress = json["source_tld"] as? String,
-            let sourcePage = json["source_post_url"] as? String,
-            let source = json["source"] as? String,
-            let username = json["username"] as? String,
-            let createTimestamp = json["create_datetime"] as? String,
-            let createdAt = dateFormatter.date(from: createTimestamp),
-            let updateTimestamp = json["update_datetime"] as? String,
-            let tags = json["tags"] as? [String],
-            let featuredTags = json["featured_tags"] as? [String],
-            let renditions = json["images"] as? [String:[String:Any]]
-            else
+        dateFormatter.setLocalizedDateFormatFromTemplate("YYYY-MM-dd HH:mm:ss")
+        
+        guard let type = json["type"] as? String else
         {
             return nil
         }
         
-        dateFormatter.setLocalizedDateFormatFromTemplate("YYYY-MM-dd hh:mm:ss")
+        guard let id = json["id"] as? String else
+        {
+            return nil
+        }
+        
+        guard let slug = json["slug"] as? String else
+        {
+            return nil
+        }
+        
+        guard let rating = json["rating"] as? String else
+        {
+            return nil
+        }
+        
+        guard let bitly = json["bitly_url"] as? String else
+        {
+            return nil
+        }
+        
+        guard let embed = json["embed_url"] as? String else
+        {
+            return nil
+        }
+        
+        guard let sourceTLDAddress = json["source_tld"] as? String else
+        {
+            return nil
+        }
+        
+        guard let sourcePage = json["source_post_url"] as? String else
+        {
+            return nil
+        }
+        
+        guard let source = json["source"] as? String else
+        {
+            return nil
+        }
+        
+        guard let username = json["username"] as? String else
+        {
+            return nil
+        }
         
         self.type = type
         self.identifier = id
@@ -131,35 +163,55 @@ public class GIF: NSObject {
         
         // Search / Filter
         self.rating = Rating(rawValue:rating) ?? .unrated
-        self.tags = tags
-        self.featuredTags = featuredTags
+        self.tags = json["tags"] as? [String]
+        self.featuredTags = json["featured_tags"] as? [String]
         
         // Attribution
         self.username = username
         
         // Timestamps
-        self.createTimestamp = createdAt
-        self.updateTimestamp = dateFormatter.date(from: updateTimestamp)
+        if let updateTimestamp = json["update_datetime"] as? String
+        {
+            self.updateTimestamp = dateFormatter.date(from: updateTimestamp)
+        }
+        
+        if let createTimestamp = json["create_datetime"] as? String
+        {
+            self.createTimestamp = dateFormatter.date(from: createTimestamp)
+        }
+        
+        if let trendingTimestamp = json["trending_datetime"] as? String
+        {
+            self.trendingTimestamp = dateFormatter.date(from: trendingTimestamp)
+        }
+        
+        if let importTimestamp = json["import_datetime"] as? String
+        {
+            self.importTimestamp = dateFormatter.date(from: importTimestamp)
+        }
+        
         
         
         // Renditions
         var transformedRenditions: [RenditionDesignation : Rendition] = [:]
         
-        for (key, json) in renditions
+        if let renditions = json["images"] as? [String: [String:String]]
         {
-            guard let designation = RenditionDesignation(rawValue: key) else
+            for (key, json) in renditions
             {
-                continue
+                guard let designation = RenditionDesignation(rawValue: key) else
+                {
+                    continue
+                }
+                
+                guard let rendition = Rendition(with: designation, and: json) else
+                {
+                    continue
+                }
+                
+                transformedRenditions[designation] = rendition
             }
-            
-            guard let rendition = Rendition(with: designation, and: json) else
-            {
-                continue
-            }
-            
-            transformedRenditions[designation] = rendition
         }
-        
         self.renditions = transformedRenditions
         
         super.init()
