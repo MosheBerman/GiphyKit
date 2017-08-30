@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="H7r-Ku-IY2">
-                                <rect key="frame" x="16" y="64" width="343" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="FgD-Fs-gET">
                                     <size key="itemSize" width="156" height="156"/>
@@ -66,10 +66,10 @@
                             <constraint firstAttribute="trailing" secondItem="NIs-rQ-kgx" secondAttribute="trailing" id="HKH-nI-WuD"/>
                             <constraint firstItem="NIs-rQ-kgx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="dRe-U6-89E"/>
                             <constraint firstItem="NIs-rQ-kgx" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="g6G-sH-8su"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="H7r-Ku-IY2" secondAttribute="trailing" id="gvY-8g-jyg"/>
+                            <constraint firstAttribute="trailing" secondItem="H7r-Ku-IY2" secondAttribute="trailing" id="gvY-8g-jyg"/>
                             <constraint firstItem="H7r-Ku-IY2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="t8X-ed-B44"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="H7r-Ku-IY2" secondAttribute="bottom" id="tcC-x8-QPa"/>
-                            <constraint firstItem="H7r-Ku-IY2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="zyb-tB-Ozf"/>
+                            <constraint firstItem="H7r-Ku-IY2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="zyb-tB-Ozf"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="y2Q-Xg-UMx"/>
