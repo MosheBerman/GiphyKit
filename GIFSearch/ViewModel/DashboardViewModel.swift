@@ -52,7 +52,7 @@ class DashboardViewModel: NSObject {
     
     /// Use this method in the view controller
     /// to explicitly ask the view model to update.
-    func setNeedsRefresh()
+    @objc func setNeedsRefresh()
     {
         if let _ = searchTerm
         {
