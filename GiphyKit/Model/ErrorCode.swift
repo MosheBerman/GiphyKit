@@ -17,4 +17,5 @@ public enum ErrorCode: Int
 {
     case noDataInResponse
     case failedToUnwrapJSONFromDataResponse
+    case couldNotGenerateEndpoint
 }
