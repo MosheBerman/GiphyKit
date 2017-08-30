@@ -32,7 +32,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="N0r-AQ-rGh">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="N0r-AQ-rGh" customClass="GIFCollectionViewCell" customModule="GIFSearch" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="156" height="156"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -50,6 +50,9 @@
                                             <constraint firstAttribute="bottomMargin" secondItem="QaQ-ei-jIK" secondAttribute="bottom" id="oQm-Sf-qnl"/>
                                             <constraint firstItem="QaQ-ei-jIK" firstAttribute="leading" secondItem="N0r-AQ-rGh" secondAttribute="leadingMargin" id="zBh-Tp-aQ7"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="staticImageView" destination="QaQ-ei-jIK" id="cSL-6B-XDK"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -60,8 +63,8 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="NIs-rQ-kgx" secondAttribute="trailing" constant="-16" id="HKH-nI-WuD"/>
-                            <constraint firstItem="NIs-rQ-kgx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="dRe-U6-89E"/>
+                            <constraint firstAttribute="trailing" secondItem="NIs-rQ-kgx" secondAttribute="trailing" id="HKH-nI-WuD"/>
+                            <constraint firstItem="NIs-rQ-kgx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="dRe-U6-89E"/>
                             <constraint firstItem="NIs-rQ-kgx" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="g6G-sH-8su"/>
                             <constraint firstAttribute="trailingMargin" secondItem="H7r-Ku-IY2" secondAttribute="trailing" id="gvY-8g-jyg"/>
                             <constraint firstItem="H7r-Ku-IY2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="t8X-ed-B44"/>
