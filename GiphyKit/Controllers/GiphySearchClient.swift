@@ -15,6 +15,15 @@ public class GiphySearchClient: NSObject {
     /// Replace this with your API key.
     private(set) var apiKey: String
     
+    // MARK: - Setting the Content Rating
+    
+    /// The rating to use for the requests.
+    public var rating: Rating = .g
+    
+    
+    // MARK: - Filtering by Region
+    public var language: LanguageCode = .unitedStates
+    
     // MARK: - Endpoints
     
     /// The GIPHY root endpoint.
@@ -30,7 +39,9 @@ public class GiphySearchClient: NSObject {
         var components = self.rootEndpointComponents
         components?.path = "trending"
         components?.queryItems = [
-            URLQueryItem(name: "api_key", value: self.apiKey)
+            URLQueryItem(name: "api_key", value: self.apiKey),
+            URLQueryItem(name: "lang", value: self.language.rawValue),
+            URLQueryItem(name: "rating", value: self.rating.rawValue)
         ]
         
         guard let url = components?.url else
@@ -48,7 +59,7 @@ public class GiphySearchClient: NSObject {
         self.apiKey = key
         self.rootEndpoint = URL(string:"https://api.giphy.com/v1")!
     }
-
+    
     // MARK: - Getting Trending GIFs.
     
     /// Fetch the trending GIFs
@@ -56,7 +67,7 @@ public class GiphySearchClient: NSObject {
     /// - Parameters:
     ///   - rating: The maximum filter rating to use with the request.
     ///   - completion: A completion handler to execute after downloading and processing the data.
-    public func trending(for rating: Rating = .g, with completion:(@escaping ([GIF]?, NSError?)->Void))
+    public func trending(with completion:(@escaping ([GIF]?, NSError?)->Void))
     {
         guard let endpoint = self.trendingEndpoint else
         {
@@ -65,7 +76,18 @@ public class GiphySearchClient: NSObject {
             return
         }
         
-        let task = URLSession.shared.dataTask(with: endpoint) { (data:Data?, response:URLResponse?, error:Error?) in
+        self.executeRequest(for: endpoint, with: completion)
+    }
+    
+    
+    /// Executes a network request and then calls the handler when finished.
+    ///
+    /// - Parameters:
+    ///   - url: The URL to request from.
+    ///   - completion: The completion handler to execute after downloading and processing data.
+    private func executeRequest(for url: URL, with completion:@escaping ([GIF]?, NSError?)->Void)
+    {
+        let task = URLSession.shared.dataTask(with: url) { (data:Data?, response:URLResponse?, error:Error?) in
             
             var errorResponse: NSError? = nil
             var gifs: [GIF]? = nil
@@ -76,7 +98,7 @@ public class GiphySearchClient: NSObject {
                 {
                     
                     if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String:Any],
-                    let jsonOfGIFs = json["data"] as? [[String:String]]
+                        let jsonOfGIFs = json["data"] as? [[String:String]]
                     {
                         for json in jsonOfGIFs
                         {
@@ -92,7 +114,7 @@ public class GiphySearchClient: NSObject {
                     }
                     else
                     {
-                       errorResponse = NSError(domain: "com.gifyclient.url-session-failure", code: ErrorCode.failedToUnwrapJSONFromDataResponse.rawValue, userInfo: nil)
+                        errorResponse = NSError(domain: "com.gifyclient.url-session-failure", code: ErrorCode.failedToUnwrapJSONFromDataResponse.rawValue, userInfo: nil)
                     }
                     
                 }
@@ -112,4 +134,5 @@ public class GiphySearchClient: NSObject {
         
         task.resume()
     }
+    
 }
