@@ -14,6 +14,10 @@ import Foundation
 /// 2-letter ISO 639-1 language code. Listed in the order 
 /// that these appear on the Giphy website.
 ///
+/// Cool trick: I copied this list of languages from Giphy's
+/// documentation and used Regexr to convert to case statements
+/// for enums, using Regexr's "List" tool: http://regexr.com/3gl4t
+///
 /// - English
 /// - Spanish
 /// - Portuguese
