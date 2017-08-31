@@ -10,6 +10,11 @@ import Foundation
 
 public class GiphySearchClient: NSObject {
     
+    // MARK: - URL Session
+    
+    /// A session we can use to interact with the API.
+    private let session = URLSession(configuration: URLSessionConfiguration.default)
+    
     // MARK: - The Client API Key
     
     /// Replace this with your API key.
@@ -151,6 +156,23 @@ public class GiphySearchClient: NSObject {
         self.executeRequest(for: endpoint, with: completion)
     }
     
+    // MARK: - Accessing an Object At a URL
+    
+    
+    /// A method for downloading a block of data (i.e. a gif, or mp4.)
+    ///
+    /// - Parameters:
+    ///   - url: The URL to access.
+    ///   - completion: A handler to pass the data back in.
+    public func item(at url: URL, with completion:@escaping (Data?)->Void)
+    {
+        let task = self.session.dataTask(with: url) { (data: Data?, response:URLResponse?, error:Error?) in
+            completion(data)
+        }
+        
+        task.resume()
+    }
+    
     
     // MARK: - Executing a Network Request
     
@@ -161,7 +183,7 @@ public class GiphySearchClient: NSObject {
     ///   - completion: The completion handler to execute after downloading and processing data.
     private func executeRequest(for url: URL, with completion:@escaping ([GIF]?, URL?, NSError?)->Void)
     {
-        let task = URLSession.shared.dataTask(with: url) { (data:Data?, response:URLResponse?, error:Error?) in
+        let task = session.dataTask(with: url) { (data:Data?, response:URLResponse?, error:Error?) in
             
             var errorResponse: NSError? = nil
             var gifs: [GIF]? = nil
