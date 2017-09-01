@@ -21,7 +21,7 @@ public class Rendition: NSObject {
     /// The size of the rendition.
     public let dimensions: CGSize
     
-    public let files: [RenditionFile]
+    public let files: [RenditionFileType:RenditionFile]
     
     // MARK: - Initializing a Rendition
     
@@ -45,14 +45,14 @@ public class Rendition: NSObject {
         
         self.dimensions = CGSize(width: width.intValue, height: height.intValue)
         
-        var files: [RenditionFile] = []
+        var files: [RenditionFileType:RenditionFile] = [:]
         let types: [RenditionFileType] = [.gif, .mp4, .webp]
         
         for fileType in types
         {
             if let renditionFile = RenditionFile(of: fileType, with: json)
             {
-                files.append(renditionFile)
+                files[fileType] = renditionFile
             }
         }
         
