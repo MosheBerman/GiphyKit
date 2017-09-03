@@ -26,7 +26,7 @@ public func gcd(a: Int, b: Int) -> Int
         return a
     }
     
-    let remainder = a % b
+    let remainder = abs(a) % abs(b)
     
-    return gcd(a: b, b: remainder)
+    return gcd(a: abs(b), b: abs(remainder))
 }
