@@ -26,7 +26,7 @@ public class RenditionFile: NSObject {
     {
         guard let sizeString = json[type.sizeKey] as? String,
             let sizeNumber = numberFormatter.number(from: sizeString),
-            let address = json[type.rawValue] as? String,
+            let address = json[type.urlKey] as? String,
             let url = URL(string: address)
             else
         {
