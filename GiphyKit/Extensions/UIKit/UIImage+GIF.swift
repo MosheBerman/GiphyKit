@@ -105,7 +105,6 @@ public extension UIImage
             return nil
         }
         
-        
         let frameCount = CGImageSourceGetCount(source)
         
         for frameIndex in 0..<frameCount
@@ -224,7 +223,7 @@ public extension UIImage
         
         let gcd = self.vectorGCD(of: durations)
         
-        for index in 0..<frames.count
+        for index in 0..<min(frames.count, durations.count)
         {
             let image = frames[index]
             let duration = durations[index]
