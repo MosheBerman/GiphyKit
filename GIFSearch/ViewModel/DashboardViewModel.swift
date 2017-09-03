@@ -14,7 +14,7 @@ class DashboardViewModel: NSObject {
     // MARK: - The API Client
     
     /// The API Client
-    private let apiClient: GiphySearchClient
+    internal let apiClient: GiphySearchClient
     
     /// The API Key
     private let apiKey:String = APIKey // Replace APIKey with your API Key
