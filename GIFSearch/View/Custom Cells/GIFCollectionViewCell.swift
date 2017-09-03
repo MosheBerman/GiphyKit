@@ -9,6 +9,5 @@
 import UIKit
 
 class GIFCollectionViewCell: UICollectionViewCell {
-    
     @IBOutlet weak var staticImageView: UIImageView!
 }
