@@ -11,4 +11,5 @@ import UIKit
 class GIFCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var staticImageView: UIImageView!
     @IBOutlet weak var hashtags: UILabel!
+    @IBOutlet weak var hashtagsPanel: UIVisualEffectView!
 }
