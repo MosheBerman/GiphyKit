@@ -59,6 +59,7 @@ class DashboardViewController: UIViewController, UICollectionViewDataSource {
     func configureSearchBar()
     {
         self.searchBar.delegate = self
+        self.searchBar.placeholder = NSLocalizedString("Type to Search Giphy", comment: "A string with search instructions.")
     }
     
     // MARK: - Configuring Our Response to ViewModel Updates
