@@ -13,7 +13,7 @@ public class GiphySearchClient: NSObject {
     // MARK: - URL Session
     
     /// A session we can use to interact with the API.
-    private let session = URLSession(configuration: URLSessionConfiguration.default)
+    private let session: URLSession
     
     // MARK: - The Client API Key
     
@@ -37,6 +37,11 @@ public class GiphySearchClient: NSObject {
     {
         self.apiKey = key
         self.rootEndpoint = URL(string:"https://api.giphy.com/")!
+        
+        let configuration = URLSessionConfiguration.default.copy() as! URLSessionConfiguration
+        configuration.requestCachePolicy = .returnCacheDataElseLoad
+        let session = URLSession(configuration: configuration)
+        self.session = session
     }
     
     
