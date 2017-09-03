@@ -22,6 +22,8 @@ class DashboardViewController: UIViewController, UICollectionViewDataSource {
         self.configureCollectionView()
         self.configureSearchBar()
         self.viewModel.setNeedsRefresh()
+        
+        self.configureButtons()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -54,12 +56,22 @@ class DashboardViewController: UIViewController, UICollectionViewDataSource {
         self.collectionView.refreshControl = refreshControl
     }
     
-    // MARK: - 
+    // MARK: - Configuring the Search Bar
     
+    
+    /// Set up the search bar.
     func configureSearchBar()
     {
         self.searchBar.delegate = self
         self.searchBar.placeholder = NSLocalizedString("Type to Search Giphy", comment: "A string with search instructions.")
+    }
+    
+    // MARK: - Configuring UIBarButtonItems
+    
+    func configureButtons()
+    {
+        let button = UIBarButtonItem(title: "💬🎧", style: .plain, target: self, action: #selector(speak))
+        self.navigationItem.rightBarButtonItem = button
     }
     
     // MARK: - Configuring Our Response to ViewModel Updates
@@ -134,6 +146,14 @@ class DashboardViewController: UIViewController, UICollectionViewDataSource {
         }
         
         return cell
+    }
+    
+    // MARK: - Speak
+    
+    /// This is a requirement 🙄
+    func speak()
+    {
+        self.speechController.pronounce(text: "This app uses UICollectionView, NSURLSession, and Swift, to display trending images from Giphy.com. You can search using the search bar. Per the requirement, I am supposed to tell you how to pronounce GIF. There.")
     }
 }
 
