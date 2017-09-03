@@ -21,16 +21,32 @@ class GiphyKitTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    // MARK: - Testing the GCD function
+    
+    func testGCD() {
+        let gcdValue = gcd(a: 18, b: 9)
+        
+        XCTAssertEqual(gcdValue, 9)
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testGCDWithNegativeNumbers()
+    {
+        let gcdValue = gcd(a: -24, b:-6)
+        
+        XCTAssertEqual(gcdValue, 6)
     }
     
+    func testGCDWithOneNegativeAndOnePositive()
+    {
+        let gcdValue = gcd(a: -8, b: 4)
+        
+        XCTAssertEqual(gcdValue, 4)
+    }
+    
+        func testGCDWithBGreaterThanA()
+    {
+        let gcdValue = gcd(a: 11, b: 44)
+        
+        XCTAssertEqual(gcdValue, 11)
+    }
 }
