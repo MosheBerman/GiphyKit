@@ -42,15 +42,28 @@ public extension UIImage
         //
         //  The counterarguments I'm seeing for keeping them seperate:
         //
-        //  - I don't know if ImageIO would ever return a different
-        //    number of frames and durations, in which case, how do the
-        //    tuples behave?
         //  - It feels slightly wrong to me to pass in an array of tuples
         //    to `animationDuration(with:)` method, when we don't care for
         //    the frames themselves.
-        //  - We get slightly clearer error logging in case one of them 
+        //  - I don't know if ImageIO would ever return a different
+        //    number of frames and durations, in which case, how do the
+        //    tuples behave?
+        //  - We get slightly clearer error logging in case one of them
         //    fails independently of the other. Again, I'm not sure if
         //    this is even possible, but it's a consideration.
+        //
+        //  I began changing the code to use a single array of tuples but
+        //  you end up with the same question in reverse. "Should this be 
+        //  two seperate arrays instead of a tuple?"
+        //
+        //  It comes down to how many iterations do we need to do in order
+        //  that the method signatures are clear and that we aren't passing
+        //  around extra data. (For example, passing the UIImages into the 
+        //  animation duration calculation methods. They only need durations.)
+        //
+        //  I think the tradeoffs of having an extra couple of lines of
+        //  code at the callsite are worth not having to unzip the tuple 
+        //  tuple in a couple of places in order to maintain clarity.
         
         guard let durations = self.animationDurations(from: data) else
         {
