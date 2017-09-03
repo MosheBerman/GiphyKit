@@ -83,8 +83,7 @@ extension DashboardViewModel
     /// - Returns: The best designation to quickly load the image.
     private func bestAvailableRenditionDesignation(for gif:GIF) -> RenditionDesignation
     {
-        let designationToReturn: RenditionDesignation = .original
-        // TODO: M
+        let designationToReturn: RenditionDesignation = .previewGIF
         return designationToReturn
     }
     
