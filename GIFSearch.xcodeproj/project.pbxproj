@@ -158,13 +158,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		460F90B21F5C8274000AC280 /* Search */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Search;
-			sourceTree = "<group>";
-		};
 		460F90B71F5C87A2000AC280 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -224,7 +217,6 @@
 			children = (
 				463562531F5322C40088119C /* View Controllers */,
 				46ECAA7B1F57324C003D7564 /* Speech */,
-				460F90B21F5C8274000AC280 /* Search */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
