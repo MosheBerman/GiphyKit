@@ -64,6 +64,13 @@ public extension UIImage
         //  I think the tradeoffs of having an extra couple of lines of
         //  code at the callsite are worth not having to unzip the tuple 
         //  tuple in a couple of places in order to maintain clarity.
+        //
+        //  UPDATE: It turns out that it's possible to have different array 
+        //  lengths, although I'm not sure why. (Try searching for "St..." 
+        //  and watch it crash. In the debugger you might be able to get more
+        //  context, but since this isn't production, I'm not going to spend
+        //  any more time on that. I've added a fix to prevent a crash, but 
+        //  GIFs might skip some frames now.
         
         guard let durations = self.animationDurations(from: data) else
         {
