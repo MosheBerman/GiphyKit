@@ -38,6 +38,17 @@ class DashboardViewController: UIViewController, UICollectionViewDataSource {
     {
         self.collectionView.dataSource = self
         
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.sectionInset = .zero
+        layout.minimumLineSpacing = 0
+        layout.minimumInteritemSpacing = 0
+        layout.itemSize = UICollectionViewFlowLayoutAutomaticSize
+        layout.estimatedItemSize = CGSize(width: 144.0, height: 144.0)
+        
+        self.collectionView.contentInset = .zero
+        self.collectionView.collectionViewLayout = layout
+        
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
         self.collectionView.refreshControl = refreshControl
@@ -63,7 +74,12 @@ class DashboardViewController: UIViewController, UICollectionViewDataSource {
             }
             
             DispatchQueue.main.async {
-                strongSelf.collectionView.reloadData()
+                
+                strongSelf.collectionView.performBatchUpdates({
+                    let itemIndexSet = IndexSet(integer: 0)
+                    strongSelf.collectionView.reloadSections(itemIndexSet)
+                })
+                
                 strongSelf.collectionView.refreshControl?.endRefreshing()
             }
         }
@@ -91,11 +107,21 @@ class DashboardViewController: UIViewController, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "com.mosheberman.cell", for: indexPath) as! GIFCollectionViewCell
         
-        let _ = self.viewModel.gif(for: indexPath) { (data: Data?, originalIndexPath: IndexPath) in
+        if let hashtags = self.viewModel.hashtags(for: indexPath)
+        {
+            cell.hashtags.text = hashtags
+            cell.hashtags.alpha = 1.0
+        }
+        else
+        {
+            cell.hashtags.alpha = 0.0
+        }
+        
+        let _ = self.viewModel.gif(for: indexPath) { [weak collectionView = collectionView](data: Data?, originalIndexPath: IndexPath) in
             DispatchQueue.main.async {
                 if indexPath == originalIndexPath
                 {
-                    if let cell = collectionView.cellForItem(at: originalIndexPath) as? GIFCollectionViewCell
+                    if let cell = collectionView?.cellForItem(at: originalIndexPath) as? GIFCollectionViewCell
                     {
                         if let data = data
                         {
