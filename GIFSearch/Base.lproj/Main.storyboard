@@ -75,6 +75,7 @@
                     <navigationItem key="navigationItem" id="y2Q-Xg-UMx"/>
                     <connections>
                         <outlet property="collectionView" destination="H7r-Ku-IY2" id="EDN-fW-rHz"/>
+                        <outlet property="searchBar" destination="NIs-rQ-kgx" id="tfj-tA-Kd1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

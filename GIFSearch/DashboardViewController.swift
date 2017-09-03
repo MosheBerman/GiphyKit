@@ -10,8 +10,9 @@ import UIKit
 
 class DashboardViewController: UIViewController, UICollectionViewDataSource {
 
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var collectionView: UICollectionView!
-    private let viewModel = DashboardViewModel()
+    internal let viewModel = DashboardViewModel()
     private let speechController = SpeechController()
     
     override func viewDidLoad() {
@@ -19,6 +20,7 @@ class DashboardViewController: UIViewController, UICollectionViewDataSource {
         // Do any additional setup after loading the view, typically from a nib.
         self.configureViewModel()
         self.configureCollectionView()
+        self.configureSearchBar()
         self.viewModel.setNeedsRefresh()
     }
     
@@ -39,6 +41,13 @@ class DashboardViewController: UIViewController, UICollectionViewDataSource {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
         self.collectionView.refreshControl = refreshControl
+    }
+    
+    // MARK: - 
+    
+    func configureSearchBar()
+    {
+        self.searchBar.delegate = self
     }
     
     // MARK: - Configuring Our Response to ViewModel Updates
@@ -82,9 +91,19 @@ class DashboardViewController: UIViewController, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "com.mosheberman.cell", for: indexPath) as! GIFCollectionViewCell
         
-        if let gif = self.viewModel.gif(for: indexPath)
-        {
-            
+        let _ = self.viewModel.gif(for: indexPath) { (data: Data?, originalIndexPath: IndexPath) in
+            DispatchQueue.main.async {
+                if indexPath == originalIndexPath
+                {
+                    if let cell = collectionView.cellForItem(at: originalIndexPath) as? GIFCollectionViewCell
+                    {
+                        if let data = data
+                        {
+                            cell.staticImageView.image = UIImage.gif(from: data)
+                        }
+                    }
+                }
+            }
         }
         
         return cell
