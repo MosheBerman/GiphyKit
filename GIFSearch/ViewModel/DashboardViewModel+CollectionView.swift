@@ -33,8 +33,37 @@ extension DashboardViewModel
         return count
     }
     
-    // MARK: - Accessing GIF Data
+    // MARK: - Accessing Hashtags for a GIF
     
+    func hashtags(for indexPath: IndexPath) -> String?
+    {
+        guard let gifs = self.gifs else
+        {
+            return nil
+        }
+        
+        guard indexPath.row < gifs.count else
+        {
+            return nil
+        }
+        
+        let gif = gifs[indexPath.row]
+        
+        var hashtags:String? = nil
+        
+        if let featured = gif.featuredTags
+        {
+            hashtags = featured.joined(separator: " #")
+        }
+        else if let tags = gif.tags
+        {
+            hashtags = tags.joined(separator: " #")
+        }
+        
+        return hashtags
+    }
+    
+    // MARK: - Accessing GIF Data
     
     /// Looks up the gif corresponding to a given index path. If one exists, returns it.
     ///
@@ -47,6 +76,7 @@ extension DashboardViewModel
             completion(nil, indexPath)
             return
         }
+        
         guard indexPath.row < gifs.count else
         {
             completion(nil, indexPath)
@@ -73,8 +103,7 @@ extension DashboardViewModel
         }
     }
     
-    // MARK: -
-    
+    // MARK: - Choosing the Appropriate Rendition
     
     /// We want to display the GIF as quickly as possible, and then load
     /// a higher quality animated version for rendering.
@@ -84,6 +113,10 @@ extension DashboardViewModel
     private func bestAvailableRenditionDesignation(for gif:GIF) -> RenditionDesignation
     {
         let designationToReturn: RenditionDesignation = .previewGIF
+        
+        // See README.md for more about this method. It doesn't do much in the demo
+        // implementation of the app.
+        
         return designationToReturn
     }
     

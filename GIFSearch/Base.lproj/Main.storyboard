@@ -6,7 +6,9 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -25,32 +27,83 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="H7r-Ku-IY2">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="FgD-Fs-gET">
-                                    <size key="itemSize" width="156" height="156"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="FgD-Fs-gET">
+                                    <size key="itemSize" width="144" height="144"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="com.mosheberman.cell" id="N0r-AQ-rGh" customClass="GIFCollectionViewCell" customModule="GIFSearch" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="156" height="156"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="144" height="144"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="156" height="156"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="144" height="144"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QaQ-ei-jIK">
-                                                    <rect key="frame" x="8" y="8" width="140" height="140"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="144" height="144"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="144" id="B2W-80-X34"/>
+                                                        <constraint firstAttribute="width" secondItem="QaQ-ei-jIK" secondAttribute="height" multiplier="1:1" id="UJu-CD-9Cl"/>
+                                                    </constraints>
                                                 </imageView>
+                                                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S6T-r6-QSf">
+                                                    <rect key="frame" x="0.0" y="96" width="144" height="48"/>
+                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="O3Q-zU-3T4">
+                                                        <rect key="frame" x="0.0" y="0.0" width="144" height="48"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <subviews>
+                                                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B1s-cG-ZTh">
+                                                                <rect key="frame" x="0.0" y="0.0" width="144" height="48"/>
+                                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="clG-Yn-JWE">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="144" height="48"/>
+                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dtm-E8-ets">
+                                                                            <rect key="frame" x="8" y="0.0" width="128" height="48"/>
+                                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                    <constraints>
+                                                                        <constraint firstItem="dtm-E8-ets" firstAttribute="leading" secondItem="clG-Yn-JWE" secondAttribute="leadingMargin" id="Ceh-Xz-oFy"/>
+                                                                        <constraint firstItem="dtm-E8-ets" firstAttribute="height" secondItem="clG-Yn-JWE" secondAttribute="height" id="kkg-Yk-KDP"/>
+                                                                        <constraint firstItem="dtm-E8-ets" firstAttribute="centerY" secondItem="clG-Yn-JWE" secondAttribute="centerY" id="nMi-nW-gbS"/>
+                                                                        <constraint firstAttribute="trailingMargin" secondItem="dtm-E8-ets" secondAttribute="trailing" id="nnj-YI-QOa"/>
+                                                                    </constraints>
+                                                                </view>
+                                                                <vibrancyEffect>
+                                                                    <blurEffect style="dark"/>
+                                                                </vibrancyEffect>
+                                                            </visualEffectView>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="B1s-cG-ZTh" firstAttribute="width" secondItem="O3Q-zU-3T4" secondAttribute="width" id="PTq-Af-dhV"/>
+                                                            <constraint firstItem="B1s-cG-ZTh" firstAttribute="centerX" secondItem="O3Q-zU-3T4" secondAttribute="centerX" id="ddV-1N-RNp"/>
+                                                            <constraint firstItem="B1s-cG-ZTh" firstAttribute="centerY" secondItem="O3Q-zU-3T4" secondAttribute="centerY" id="evb-ve-J1T"/>
+                                                            <constraint firstItem="B1s-cG-ZTh" firstAttribute="height" secondItem="O3Q-zU-3T4" secondAttribute="height" id="pai-s7-QWP"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <blurEffect style="dark"/>
+                                                </visualEffectView>
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="QaQ-ei-jIK" firstAttribute="top" secondItem="N0r-AQ-rGh" secondAttribute="topMargin" id="4Cb-tW-mxv"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="QaQ-ei-jIK" secondAttribute="trailing" id="EQ1-v7-z4I"/>
-                                            <constraint firstAttribute="bottomMargin" secondItem="QaQ-ei-jIK" secondAttribute="bottom" id="oQm-Sf-qnl"/>
-                                            <constraint firstItem="QaQ-ei-jIK" firstAttribute="leading" secondItem="N0r-AQ-rGh" secondAttribute="leadingMargin" id="zBh-Tp-aQ7"/>
+                                            <constraint firstItem="S6T-r6-QSf" firstAttribute="width" secondItem="N0r-AQ-rGh" secondAttribute="width" id="0tk-Ky-RaR"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="QaQ-ei-jIK" secondAttribute="trailing" constant="-8" id="FhS-lB-OqM"/>
+                                            <constraint firstItem="S6T-r6-QSf" firstAttribute="centerX" secondItem="N0r-AQ-rGh" secondAttribute="centerX" id="IBs-ng-Dh6"/>
+                                            <constraint firstItem="QaQ-ei-jIK" firstAttribute="leading" secondItem="N0r-AQ-rGh" secondAttribute="leadingMargin" constant="-8" id="P6V-IP-XhJ"/>
+                                            <constraint firstItem="QaQ-ei-jIK" firstAttribute="centerX" secondItem="N0r-AQ-rGh" secondAttribute="centerX" id="bfI-V2-U1c"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="QaQ-ei-jIK" secondAttribute="bottom" constant="-8" id="jfl-oy-Hvy"/>
+                                            <constraint firstItem="QaQ-ei-jIK" firstAttribute="centerY" secondItem="N0r-AQ-rGh" secondAttribute="centerY" id="rO9-w0-Jv8"/>
+                                            <constraint firstAttribute="bottom" secondItem="S6T-r6-QSf" secondAttribute="bottom" id="rlZ-d4-xaO"/>
+                                            <constraint firstItem="S6T-r6-QSf" firstAttribute="height" secondItem="N0r-AQ-rGh" secondAttribute="height" multiplier="1:3" id="tfH-Re-TxS"/>
+                                            <constraint firstItem="QaQ-ei-jIK" firstAttribute="top" secondItem="N0r-AQ-rGh" secondAttribute="topMargin" constant="-8" id="ySL-JX-5U5"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="hashtags" destination="dtm-E8-ets" id="LDe-5f-aNH"/>
                                             <outlet property="staticImageView" destination="QaQ-ei-jIK" id="cSL-6B-XDK"/>
                                         </connections>
                                     </collectionViewCell>
