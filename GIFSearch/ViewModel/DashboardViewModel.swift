@@ -54,7 +54,7 @@ class DashboardViewModel: NSObject {
     /// to explicitly ask the view model to update.
     @objc func setNeedsRefresh()
     {
-        if let _ = searchTerm
+        if let term = searchTerm, term.characters.count > 0
         {
             self.refreshSearchResults()
         }
