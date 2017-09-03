@@ -10,9 +10,13 @@ To run the giphy client, follow these steps:
 
 ## Technologies
 This app uses the following technologies:
+- Swift 3
+- `NSURLSession` and `NSURLSessionTask` for data downloading and minimal caching
+- `ImageIO.framework` for loading GIF images from NSData, for display in `UIImageView`
+- `UICollectionView` and `UIImageView` for display
 
-- `NSURLSession` and `NSURLSessionTask` for data downloading and minimal caching.
-- `ImageIO.framework` for loading GIF images from NSData, for display in `UIImageView`.
+## Architecture
+The app follows basic MVVM principles. The Giphy code is seperated into a framework called GiphyKit.
 
 ## Technical Challenges
 This project includes a number of technical challenges, some of which I'll discuss here, along with my approach to each one.
@@ -27,7 +31,7 @@ The GIFs in this app come from the network, and as such, take time to download. 
 
 
 ### Caching 
-I actually started building a seperate framework for caching but realized that NSURLSession has what I was building baked right in. So, I turned it on, by switching from `URLSession.shared` to `URLSession.default`. As of this writing, it seems I have a little more work to do to get this working right, but in theory, I shouldn't need a dependency for this besides for Foundation.  
+I actually started building a seperate framework for caching but realized that `URLSession` has what I was building baked right in. So, I turned it on, by switching from `URLSession.shared` to `URLSession.default`. As of this writing, it seems I have a little more work to do to get this working right, but in theory, I shouldn't need a dependency for this besides for Foundation.  
 
 ### Knowing Which GIF to Render
 
