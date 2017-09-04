@@ -234,6 +234,10 @@ public extension UIImage
         {
             let image = frames[index]
             let duration = durations[index]
+            if gcd == 0
+            {
+                continue
+            }
             
             let repeatCount = duration / gcd
             
