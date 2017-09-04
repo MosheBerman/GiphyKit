@@ -38,7 +38,14 @@ class RatingController: NSObject {
         {
             let title = rating.displayName
             
-            let actionItem = UIAlertAction(title: title, style: .default, handler: { [weak self](action:UIAlertAction) in
+            var style: UIAlertActionStyle = .default
+            
+            if rating == self.apiClient?.rating
+            {
+                style = .cancel
+            }
+            
+            let actionItem = UIAlertAction(title: title, style: style, handler: { [weak self](action:UIAlertAction) in
                 self?.apiClient?.rating = rating
             })
             
