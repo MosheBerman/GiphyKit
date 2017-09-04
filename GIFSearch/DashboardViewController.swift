@@ -25,6 +25,8 @@ class DashboardViewController: UIViewController, UICollectionViewDataSource, UIC
         self.configureSearchBar()
         self.viewModel.setNeedsRefresh()
         
+        self.title = NSLocalizedString("Giphy Browser", comment: "A title for the demo app.")
+        
         self.configureButtons()
     }
     
