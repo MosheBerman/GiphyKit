@@ -16,6 +16,8 @@ class DashboardViewController: UIViewController, UICollectionViewDataSource, UIC
     @IBOutlet weak var backgroundCollectionView: UICollectionView!
     internal let viewModel = DashboardViewModel()
     private let speechController = SpeechController()
+    private let ratingController = RatingController()
+    private let languageController = LanguageController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,8 +83,11 @@ class DashboardViewController: UIViewController, UICollectionViewDataSource, UIC
     
     func configureButtons()
     {
-        let button = UIBarButtonItem(title: "💬🎧", style: .plain, target: self, action: #selector(speak))
-        self.navigationItem.rightBarButtonItem = button
+        let speakButton = UIBarButtonItem(title: "💬🎧", style: .plain, target: self, action: #selector(speak))
+        self.navigationItem.rightBarButtonItem = speakButton
+        
+        let settingsButton = UIBarButtonItem(title: "⚙️", style: .plain, target: self, action: #selector(showSettings))
+        self.navigationItem.leftBarButtonItems = [settingsButton]
     }
     
     // MARK: - Configuring Our Response to ViewModel Updates
@@ -191,5 +196,23 @@ class DashboardViewController: UIViewController, UICollectionViewDataSource, UIC
     {
         self.speechController.pronounce(text: "This app uses UICollectionView, NSURLSession, and Swift, to display trending images from Giphy.com. You can search using the search bar. Per the requirement, I am supposed to tell you how to pronounce GIF. There.")
     }
+    
+    // MARK: - Showing Settings
+
+    /// Show the settings menu.
+    /// For now, just skip to ratings.
+    func showSettings()
+    {
+        self.showRatings()
+    }
+    
+    func showRatings()
+    {
+        self.ratingController.apiClient = self.viewModel.apiClient
+        
+        let alertController = self.ratingController.alertController
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
 }
 
