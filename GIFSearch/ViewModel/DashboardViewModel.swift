@@ -33,6 +33,20 @@ class DashboardViewModel: NSObject {
         }
     }
     
+    // MARK: - Title
+    
+    public var title:String
+    {
+        var title = NSLocalizedString("Giphy Trending", comment: "A title for the demo app.")
+        
+        if let term = self.searchTerm, term.characters.count > 0
+        {
+            title = NSLocalizedString("Giphy Results for \(term)", comment: "")
+        }
+        
+        return title
+    }
+    
     // MARK: - Responding to Data Changes
     
     /// A callback that view controllers can use
