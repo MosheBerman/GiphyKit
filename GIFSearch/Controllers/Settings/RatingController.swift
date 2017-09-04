@@ -9,7 +9,7 @@
 import UIKit
 import GiphyKit
 
-class RatingController: NSObject {
+class RatingController: NSObject, SettingsDetailController {
 
     // A weak reference to the giphy client.
     var apiClient: GiphyAPIClient? = nil
@@ -22,7 +22,7 @@ class RatingController: NSObject {
     // MARK: - Generating an Alert Controller
     
     /// Returns an alert controller, ready to display the rating prompt.
-    var alertController: UIAlertController
+    var viewController: UIViewController
     {
         let title = NSLocalizedString("Content Rating", comment: "The title for the rating picker.")
         var message = NSLocalizedString("Choose the content rating you wish to see.", comment: "A message for the content picker.")
