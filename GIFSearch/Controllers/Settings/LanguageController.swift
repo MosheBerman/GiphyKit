@@ -11,8 +11,13 @@ import GiphyKit
 
 class LanguageController: NSObject, SettingsDetailController {
     
-    // A weak reference to the giphy client.
+    /// A weak reference to the giphy client.
     var apiClient: GiphyAPIClient? = nil
+    
+    /// The title for the view controller
+    var title: String? {
+        return NSLocalizedString("Language", comment: "The title for the language picker.")
+    }
     
     /// All of the languages
     private let languages: [LanguageCode] = [.arabic, .bengali, .czech, .danish, .dutch, .english, .farsi, .filipino, .finnish, .french, .german, .hebrew, .indonesian, .italian, .japanese, .korean, .malay, .norwegian, .polish, .romanian, .russian, .spanish, .swedish, .thai, .turkish, .ukrainian, .vietnamese]
@@ -20,17 +25,16 @@ class LanguageController: NSObject, SettingsDetailController {
     // The alert controller
     var viewController: UIViewController
     {
-        let title = NSLocalizedString("Language", comment: "The title for the language picker.")
         let message = NSLocalizedString("Choose your preferred language region.", comment: "A message for the language picker.")
         
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
+        
+        let locale = NSLocale.current
         
         for language in self.languages
         {
             
             var title = language.rawValue
-            
-            let locale = NSLocale(localeIdentifier: language.rawValue)
             
             if let languageName = locale.localizedString(forLanguageCode: language.rawValue)
             {

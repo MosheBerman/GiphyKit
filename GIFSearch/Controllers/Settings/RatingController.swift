@@ -14,6 +14,8 @@ class RatingController: NSObject, SettingsDetailController {
     // A weak reference to the giphy client.
     var apiClient: GiphyAPIClient? = nil
     
+    private(set) var title:String? = NSLocalizedString("Content Rating", comment: "The title for the rating picker.")
+    
     // MARK: - Listing Ratings
     
     /// Returns a list of ratings
@@ -24,7 +26,6 @@ class RatingController: NSObject, SettingsDetailController {
     /// Returns an alert controller, ready to display the rating prompt.
     var viewController: UIViewController
     {
-        let title = NSLocalizedString("Content Rating", comment: "The title for the rating picker.")
         var message = NSLocalizedString("Choose the content rating you wish to see.", comment: "A message for the content picker.")
         
         if let client = self.apiClient
