@@ -31,7 +31,7 @@ The GIFs in this app come from the network, and as such, take time to download. 
 
 
 ### Caching 
-I actually started building a seperate framework for caching but realized that `URLSession` has what I was building baked right in. So, I turned it on, by switching from `URLSession.shared` to `URLSession.default`. As of this writing, it seems I have a little more work to do to get this working right, but in theory, I shouldn't need a dependency for this besides for Foundation.  
+I actually started building a seperate framework for caching but realized that `URLSession` has what I was building baked right in. So, I turned it on, by switching from `URLSession.shared` to `URLSession.default`. The other change necessary to get this working correctly was to configure the session's cache policy to try the cache before the network.
 
 ### Knowing Which GIF to Render
 
