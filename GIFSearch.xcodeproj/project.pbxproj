@@ -13,6 +13,9 @@
 		460F90C21F5D5DF7000AC280 /* RatingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460F90C11F5D5DF7000AC280 /* RatingController.swift */; };
 		460F90C61F5D8304000AC280 /* SettingsDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460F90C51F5D8304000AC280 /* SettingsDetailController.swift */; };
 		460F90C81F5D859C000AC280 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460F90C71F5D859C000AC280 /* SettingsController.swift */; };
+		460F90CB1F5D92FF000AC280 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460F90CA1F5D92FF000AC280 /* Preferences.swift */; };
+		460F90CD1F5D9404000AC280 /* PreferencesKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460F90CC1F5D9404000AC280 /* PreferencesKey.swift */; };
+		460F90CF1F5D94C2000AC280 /* NotificationName+Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460F90CE1F5D94C2000AC280 /* NotificationName+Preferences.swift */; };
 		4635622D1F5320020088119C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4635622C1F5320020088119C /* AppDelegate.swift */; };
 		4635622F1F5320020088119C /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4635622E1F5320020088119C /* DashboardViewController.swift */; };
 		463562321F5320020088119C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 463562301F5320020088119C /* Main.storyboard */; };
@@ -98,6 +101,9 @@
 		460F90C51F5D8304000AC280 /* SettingsDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsDetailController.swift; path = Controllers/Settings/SettingsDetailController.swift; sourceTree = "<group>"; };
 		460F90C71F5D859C000AC280 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsController.swift; path = Controllers/Settings/SettingsController.swift; sourceTree = "<group>"; };
 		460F90C91F5D8C51000AC280 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
+		460F90CA1F5D92FF000AC280 /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Preferences.swift; path = Model/Preferences.swift; sourceTree = "<group>"; };
+		460F90CC1F5D9404000AC280 /* PreferencesKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesKey.swift; path = Model/PreferencesKey.swift; sourceTree = "<group>"; };
+		460F90CE1F5D94C2000AC280 /* NotificationName+Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NotificationName+Preferences.swift"; path = "Extensions/NotificationName+Preferences.swift"; sourceTree = "<group>"; };
 		463562291F5320020088119C /* GIFSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GIFSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4635622C1F5320020088119C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4635622E1F5320020088119C /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
@@ -196,6 +202,14 @@
 			name = Settings;
 			sourceTree = "<group>";
 		};
+		460F90D01F5D94C6000AC280 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				460F90CE1F5D94C2000AC280 /* NotificationName+Preferences.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		463562201F5320020088119C = {
 			isa = PBXGroup;
 			children = (
@@ -224,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				4635622C1F5320020088119C /* AppDelegate.swift */,
+				460F90D01F5D94C6000AC280 /* Extensions */,
 				463562541F5322D00088119C /* App Boilerplate */,
 				463562551F5322F20088119C /* Model */,
 				463562C11F5659F10088119C /* View */,
@@ -284,6 +299,8 @@
 			isa = PBXGroup;
 			children = (
 				4635625E1F546F070088119C /* APIKey.swift */,
+				460F90CA1F5D92FF000AC280 /* Preferences.swift */,
+				460F90CC1F5D9404000AC280 /* PreferencesKey.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -544,14 +561,17 @@
 			files = (
 				463562C01F5653BF0088119C /* DashboardViewModel+CollectionView.swift in Sources */,
 				460F90C81F5D859C000AC280 /* SettingsController.swift in Sources */,
+				460F90CF1F5D94C2000AC280 /* NotificationName+Preferences.swift in Sources */,
 				4635622F1F5320020088119C /* DashboardViewController.swift in Sources */,
 				460F90C21F5D5DF7000AC280 /* RatingController.swift in Sources */,
 				46ECAA771F572903003D7564 /* GIFCollectionViewCell.swift in Sources */,
 				4635624D1F5322430088119C /* DashboardViewModel.swift in Sources */,
 				4635622D1F5320020088119C /* AppDelegate.swift in Sources */,
 				460F90C61F5D8304000AC280 /* SettingsDetailController.swift in Sources */,
+				460F90CB1F5D92FF000AC280 /* Preferences.swift in Sources */,
 				460F90BC1F5CD338000AC280 /* GiphyLayout.swift in Sources */,
 				460F90BF1F5D5DE1000AC280 /* LanguageController.swift in Sources */,
+				460F90CD1F5D9404000AC280 /* PreferencesKey.swift in Sources */,
 				4635625F1F546F070088119C /* APIKey.swift in Sources */,
 				460F90B41F5C83EB000AC280 /* DashboardViewController+Search.swift in Sources */,
 				46ECAA7A1F573247003D7564 /* SpeechController.swift in Sources */,
