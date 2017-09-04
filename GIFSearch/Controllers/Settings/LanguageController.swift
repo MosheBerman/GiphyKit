@@ -56,8 +56,6 @@ class LanguageController: NSObject, SettingsDetailController {
         }
         
         return alertController
-
-        
     }
     
 }
