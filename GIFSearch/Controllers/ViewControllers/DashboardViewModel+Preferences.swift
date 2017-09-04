@@ -13,6 +13,7 @@ extension DashboardViewModel
 {
     // MARK: - Loading Preferences On Launch
     
+    /// Loads preferences from the preferences store.
     func loadPreferences()
     {
         if let language = Preferences.shared.preference(for: .language)
