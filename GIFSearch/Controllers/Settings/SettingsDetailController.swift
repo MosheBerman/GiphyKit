@@ -11,7 +11,6 @@ import GiphyKit
 
 protocol SettingsDetailController {
     
-    
     /// The API client that the details view uses to modify settings.
     weak var apiClient: GiphyAPIClient? { get set }
     
