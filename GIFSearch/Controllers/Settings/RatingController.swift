@@ -19,8 +19,9 @@ class RatingController: NSObject {
     /// Returns a list of ratings
     private let ratings: [Rating] = [.g, .pg, .pg13, .r]
     
-    // MARK: -
+    // MARK: - Generating an Alert Controller
     
+    /// Returns an alert controller, ready to display the rating prompt.
     var alertController: UIAlertController
     {
         let title = NSLocalizedString("Content Rating", comment: "The title for the rating picker.")
