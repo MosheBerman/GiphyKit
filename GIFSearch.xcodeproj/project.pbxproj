@@ -10,6 +10,8 @@
 		460F90B41F5C83EB000AC280 /* DashboardViewController+Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460F90B31F5C83EB000AC280 /* DashboardViewController+Search.swift */; };
 		460F90B61F5C871B000AC280 /* Readme.md in Sources */ = {isa = PBXBuildFile; fileRef = 460F90B51F5C871B000AC280 /* Readme.md */; };
 		460F90BC1F5CD338000AC280 /* GiphyLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460F90BB1F5CD338000AC280 /* GiphyLayout.swift */; };
+		460F90BF1F5D5DE1000AC280 /* LanguageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460F90BE1F5D5DE1000AC280 /* LanguageController.swift */; };
+		460F90C21F5D5DF7000AC280 /* RatingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460F90C11F5D5DF7000AC280 /* RatingController.swift */; };
 		4635622D1F5320020088119C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4635622C1F5320020088119C /* AppDelegate.swift */; };
 		4635622F1F5320020088119C /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4635622E1F5320020088119C /* DashboardViewController.swift */; };
 		463562321F5320020088119C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 463562301F5320020088119C /* Main.storyboard */; };
@@ -32,7 +34,7 @@
 		463562B31F5627960088119C /* RenditionFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463562AA1F5627960088119C /* RenditionFile.swift */; };
 		463562B41F5627960088119C /* RenditionFileType+Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463562AB1F5627960088119C /* RenditionFileType+Keys.swift */; };
 		463562B51F5627960088119C /* RenditionFileType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463562AC1F5627960088119C /* RenditionFileType.swift */; };
-		463562BA1F5628500088119C /* GiphySearchClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463562B91F5628500088119C /* GiphySearchClient.swift */; };
+		463562BA1F5628500088119C /* GiphyAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463562B91F5628500088119C /* GiphyAPIClient.swift */; };
 		463562BC1F5639A50088119C /* LanguageCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463562BB1F5639A50088119C /* LanguageCode.swift */; };
 		463562C01F5653BF0088119C /* DashboardViewModel+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463562BF1F5653BF0088119C /* DashboardViewModel+CollectionView.swift */; };
 		46ECAA771F572903003D7564 /* GIFCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46ECAA761F572903003D7564 /* GIFCollectionViewCell.swift */; };
@@ -90,6 +92,8 @@
 		460F90B31F5C83EB000AC280 /* DashboardViewController+Search.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DashboardViewController+Search.swift"; path = "Controllers/ViewControllers/DashboardViewController+Search.swift"; sourceTree = "<group>"; };
 		460F90B51F5C871B000AC280 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 		460F90BB1F5CD338000AC280 /* GiphyLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GiphyLayout.swift; path = View/UICollectionViewLayout/GiphyLayout.swift; sourceTree = "<group>"; };
+		460F90BE1F5D5DE1000AC280 /* LanguageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LanguageController.swift; path = Controllers/Settings/LanguageController.swift; sourceTree = "<group>"; };
+		460F90C11F5D5DF7000AC280 /* RatingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RatingController.swift; path = Controllers/Settings/RatingController.swift; sourceTree = "<group>"; };
 		463562291F5320020088119C /* GIFSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GIFSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4635622C1F5320020088119C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4635622E1F5320020088119C /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
@@ -117,7 +121,7 @@
 		463562AA1F5627960088119C /* RenditionFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenditionFile.swift; sourceTree = "<group>"; };
 		463562AB1F5627960088119C /* RenditionFileType+Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RenditionFileType+Keys.swift"; sourceTree = "<group>"; };
 		463562AC1F5627960088119C /* RenditionFileType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenditionFileType.swift; sourceTree = "<group>"; };
-		463562B91F5628500088119C /* GiphySearchClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiphySearchClient.swift; sourceTree = "<group>"; };
+		463562B91F5628500088119C /* GiphyAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiphyAPIClient.swift; sourceTree = "<group>"; };
 		463562BB1F5639A50088119C /* LanguageCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageCode.swift; sourceTree = "<group>"; };
 		463562BF1F5653BF0088119C /* DashboardViewModel+CollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DashboardViewModel+CollectionView.swift"; path = "ViewModel/DashboardViewModel+CollectionView.swift"; sourceTree = "<group>"; };
 		46ECAA761F572903003D7564 /* GIFCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GIFCollectionViewCell.swift; path = "View/Custom Cells/GIFCollectionViewCell.swift"; sourceTree = "<group>"; };
@@ -177,6 +181,15 @@
 			name = UICollectionViewLayout;
 			sourceTree = "<group>";
 		};
+		460F90C01F5D5DE5000AC280 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				460F90BE1F5D5DE1000AC280 /* LanguageController.swift */,
+				460F90C11F5D5DF7000AC280 /* RatingController.swift */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
 		463562201F5320020088119C = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +240,7 @@
 			children = (
 				463562531F5322C40088119C /* View Controllers */,
 				46ECAA7B1F57324C003D7564 /* Speech */,
+				460F90C01F5D5DE5000AC280 /* Settings */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -308,7 +322,7 @@
 		463562B81F5628500088119C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				463562B91F5628500088119C /* GiphySearchClient.swift */,
+				463562B91F5628500088119C /* GiphyAPIClient.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -523,10 +537,12 @@
 			files = (
 				463562C01F5653BF0088119C /* DashboardViewModel+CollectionView.swift in Sources */,
 				4635622F1F5320020088119C /* DashboardViewController.swift in Sources */,
+				460F90C21F5D5DF7000AC280 /* RatingController.swift in Sources */,
 				46ECAA771F572903003D7564 /* GIFCollectionViewCell.swift in Sources */,
 				4635624D1F5322430088119C /* DashboardViewModel.swift in Sources */,
 				4635622D1F5320020088119C /* AppDelegate.swift in Sources */,
 				460F90BC1F5CD338000AC280 /* GiphyLayout.swift in Sources */,
+				460F90BF1F5D5DE1000AC280 /* LanguageController.swift in Sources */,
 				4635625F1F546F070088119C /* APIKey.swift in Sources */,
 				460F90B41F5C83EB000AC280 /* DashboardViewController+Search.swift in Sources */,
 				46ECAA7A1F573247003D7564 /* SpeechController.swift in Sources */,
@@ -551,7 +567,7 @@
 				463562B11F5627960088119C /* Rendition.swift in Sources */,
 				463562AF1F5627960088119C /* GIF.swift in Sources */,
 				46ECAAB41F5A0ECB003D7564 /* UIImage+GIF.swift in Sources */,
-				463562BA1F5628500088119C /* GiphySearchClient.swift in Sources */,
+				463562BA1F5628500088119C /* GiphyAPIClient.swift in Sources */,
 				463562BC1F5639A50088119C /* LanguageCode.swift in Sources */,
 				463562AD1F5627960088119C /* ErrorCode.swift in Sources */,
 				46ECAAB61F5BC3F1003D7564 /* gcd.swift in Sources */,

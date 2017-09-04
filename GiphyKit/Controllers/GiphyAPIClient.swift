@@ -1,5 +1,5 @@
 //
-//  GiphySearchClient.swift
+//  GiphyAPIClient.swift
 //  GIFSearch
 //
 //  Created by Moshe Berman on 8/27/17.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class GiphySearchClient: NSObject {
+public class GiphyAPIClient: NSObject {
     
     // MARK: - URL Session
     

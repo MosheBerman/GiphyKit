@@ -14,7 +14,7 @@ class DashboardViewModel: NSObject {
     // MARK: - The API Client
     
     /// The API Client
-    internal let apiClient: GiphySearchClient
+    internal let apiClient: GiphyAPIClient
     
     /// The API Key
     private let apiKey:String = APIKey // Replace APIKey with your API Key
@@ -57,7 +57,7 @@ class DashboardViewModel: NSObject {
     
     override init() {
         
-        self.apiClient = GiphySearchClient(with: self.apiKey)
+        self.apiClient = GiphyAPIClient(with: self.apiKey)
         super.init()
     }
     

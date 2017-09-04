@@ -9,7 +9,7 @@
 import Foundation
 
 
-/// An enum representing different error conditions that the GiphySearchClient.swift.
+/// An enum representing different error conditions that the GiphyAPIClient.swift.
 ///
 /// - noDataInRespone: The URLSessionTask called the handler block with no data.
 /// - failedToUnwrapJSONFromDataResponse: The data wasn't able to be understood by `NSJSONSerialization`.
