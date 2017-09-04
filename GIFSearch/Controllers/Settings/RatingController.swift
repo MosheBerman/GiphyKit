@@ -12,7 +12,7 @@ import GiphyKit
 class RatingController: NSObject {
 
     // A weak reference to the giphy client.
-    let apiClient: GiphyAPIClient? = nil
+    var apiClient: GiphyAPIClient? = nil
     
     // MARK: - Listing Ratings
     
@@ -33,7 +33,7 @@ class RatingController: NSObject {
             let title = rating.displayName
             
             let actionItem = UIAlertAction(title: title, style: .default, handler: { [weak self](action:UIAlertAction) in
-                self?.giphyClient?.rating = rating
+                self?.apiClient?.rating = rating
             })
             
             alertController.addAction(actionItem)
