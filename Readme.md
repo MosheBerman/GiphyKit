@@ -4,14 +4,13 @@ A Giphy API client that shows trending and search results.
 
 ## Running It 
 
-The demo app requires iOS 10.3 or later to run.
-
 To run the giphy client, follow these steps:
 1. Check out this repo: `git clone https://github.com/MosheBerman/GiphyKit.git`
 2. Go to https://developers.giphy.com and set up an app, and grab your API key.
 3. In DashboardViewModel.swift, add your API key. (On line 20.) 
 4. Build and run.
 
+The demo app requires iOS 10.3 or later to run.
 
 ## Technologies
 This app uses the following technologies:
@@ -72,10 +71,10 @@ An alternative approach that was suggested to me on a Slack channel, is to just 
 Initially, I had actually considered using AVPlayerLayer to display the mp4 version of the GIFs. Once I started going down that route, I saw that MP4 wasn't going to be faster than rendering GIFs. Additionally, there's no guarantee that any specific rendition of the GIF supports mp4, and a service for GIFs is more likely to include GIFs in each "rendition." Finally, it felt like cheating. Animating MP4s isn't animating GIFs.
 
 ## To Do 
-These are some nice-to-haves that I didn't implement for the demo.
-- [ ] Expose UI for locale and filter configuration.
-- [ ] Complete GiphyKit by adding `Pagination` and `Metadata` models, as well as the remaining endpoints.
-- [ ] Work on a rendition selection algorithm
+These are some nice-to-haves that I didn't implement for the demo:
+- Complete GiphyKit by adding `Pagination` and `Metadata` models, as well as the remaining endpoints.
+- Work on a rendition selection algorithm.
+Issues are now being tracked in the GitHub Issue Tracker.
  
 
 ## Legal
