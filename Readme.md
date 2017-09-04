@@ -70,9 +70,9 @@ Initially, I had actually considered using AVPlayerLayer to display the mp4 vers
 
 ## To Do 
 These are some nice-to-haves that I didn't implement for the demo.
-- [] Expose UI for locale and filter configuration.
-- [] Complete GiphyKit by adding `Pagination` and `Metadata` models, as well as the remaining endpoints.
-- [] Work on a rendition selection algorithm
+- [ ] Expose UI for locale and filter configuration.
+- [ ] Complete GiphyKit by adding `Pagination` and `Metadata` models, as well as the remaining endpoints.
+- [ ] Work on a rendition selection algorithm
  
 
 ## Legal
