@@ -55,7 +55,7 @@ class DashboardViewController: UIViewController, UICollectionViewDataSource, UIC
     {
         collectionView.dataSource = self
         
-        let layout = UICollectionViewFlowLayout()
+        let layout = GiphyLayout()
         layout.scrollDirection = .vertical
         
         layout.minimumLineSpacing = 0.0

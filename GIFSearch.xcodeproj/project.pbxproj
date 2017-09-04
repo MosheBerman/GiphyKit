@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		460F90B41F5C83EB000AC280 /* DashboardViewController+Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460F90B31F5C83EB000AC280 /* DashboardViewController+Search.swift */; };
 		460F90B61F5C871B000AC280 /* Readme.md in Sources */ = {isa = PBXBuildFile; fileRef = 460F90B51F5C871B000AC280 /* Readme.md */; };
+		460F90BC1F5CD338000AC280 /* GiphyLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460F90BB1F5CD338000AC280 /* GiphyLayout.swift */; };
 		4635622D1F5320020088119C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4635622C1F5320020088119C /* AppDelegate.swift */; };
 		4635622F1F5320020088119C /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4635622E1F5320020088119C /* DashboardViewController.swift */; };
 		463562321F5320020088119C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 463562301F5320020088119C /* Main.storyboard */; };
@@ -88,6 +89,7 @@
 /* Begin PBXFileReference section */
 		460F90B31F5C83EB000AC280 /* DashboardViewController+Search.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DashboardViewController+Search.swift"; path = "Controllers/ViewControllers/DashboardViewController+Search.swift"; sourceTree = "<group>"; };
 		460F90B51F5C871B000AC280 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
+		460F90BB1F5CD338000AC280 /* GiphyLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GiphyLayout.swift; path = View/UICollectionViewLayout/GiphyLayout.swift; sourceTree = "<group>"; };
 		463562291F5320020088119C /* GIFSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GIFSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4635622C1F5320020088119C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4635622E1F5320020088119C /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
@@ -165,6 +167,14 @@
 				46ECAAB51F5BC3F1003D7564 /* gcd.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		460F90BD1F5CD4AA000AC280 /* UICollectionViewLayout */ = {
+			isa = PBXGroup;
+			children = (
+				460F90BB1F5CD338000AC280 /* GiphyLayout.swift */,
+			);
+			name = UICollectionViewLayout;
 			sourceTree = "<group>";
 		};
 		463562201F5320020088119C = {
@@ -308,6 +318,7 @@
 			children = (
 				46ECAA781F572907003D7564 /* Custom Cells */,
 				463562501F5322860088119C /* Controllers */,
+				460F90BD1F5CD4AA000AC280 /* UICollectionViewLayout */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -515,6 +526,7 @@
 				46ECAA771F572903003D7564 /* GIFCollectionViewCell.swift in Sources */,
 				4635624D1F5322430088119C /* DashboardViewModel.swift in Sources */,
 				4635622D1F5320020088119C /* AppDelegate.swift in Sources */,
+				460F90BC1F5CD338000AC280 /* GiphyLayout.swift in Sources */,
 				4635625F1F546F070088119C /* APIKey.swift in Sources */,
 				460F90B41F5C83EB000AC280 /* DashboardViewController+Search.swift in Sources */,
 				46ECAA7A1F573247003D7564 /* SpeechController.swift in Sources */,
