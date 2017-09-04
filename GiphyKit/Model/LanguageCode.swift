@@ -50,7 +50,7 @@ import Foundation
 /// - Ukrainian
 public enum LanguageCode: String
 {
-    case unitedStates = "en"
+    case english = "en"
     case spanish = "es"
     case portuguese = "pt"
     case indonesian = "id"
