@@ -12,7 +12,7 @@ import GiphyKit
 class RatingController: NSObject {
 
     // A weak reference to the giphy client.
-    let giphyClient: GiphyAPIClient? = nil
+    let apiClient: GiphyAPIClient? = nil
     
     // MARK: - Listing Ratings
     
