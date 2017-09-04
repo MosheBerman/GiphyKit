@@ -65,9 +65,11 @@ An alternative approach that was suggested to me on a Slack channel, is to just 
 Initially, I had actually considered using AVPlayerLayer to display the mp4 version of the GIFs. Once I started going down that route, I saw that MP4 wasn't going to be faster than rendering GIFs. Additionally, there's no guarantee that any specific rendition of the GIF supports mp4, and a service for GIFs is more likely to include GIFs in each "rendition." Finally, it felt like cheating. Animating MP4s isn't animating GIFs.
 
 ## To Do 
+These are some nice-to-haves that I didn't implement for the demo.
+- [] Expose UI for locale and filter configuration.
 - [] Complete GiphyKit by adding `Pagination` and `Metadata` models, as well as the remaining endpoints.
 - [] Work on a rendition selection algorithm
-- [] Improve `URLSession` caching by configuring the `URLSessionCache` object 
+ 
 
 ## Legal
 
