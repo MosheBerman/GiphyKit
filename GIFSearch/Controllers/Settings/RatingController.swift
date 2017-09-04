@@ -10,9 +10,6 @@ import UIKit
 import GiphyKit
 
 class RatingController: NSObject, SettingsDetailController {
-
-    // A weak reference to the giphy client.
-    var apiClient: GiphyAPIClient? = nil
     
     private(set) var title:String? = NSLocalizedString("Content Rating", comment: "The title for the rating picker.")
     
@@ -26,14 +23,19 @@ class RatingController: NSObject, SettingsDetailController {
     /// Returns an alert controller, ready to display the rating prompt.
     var viewController: UIViewController
     {
+        // We use this to display the UI a little better.
+        let currentSetting = Preferences.shared.preference(for: .rating)
+        
         var message = NSLocalizedString("Choose the content rating you wish to see.", comment: "A message for the content picker.")
         
-        if let client = self.apiClient
+        if let current = currentSetting, let rating = Rating(rawValue: current)
         {
-            message.append(" \(NSLocalizedString("You're looking currently looking at content rated", comment: "")) \(client.rating.displayName).")
+            message.append(" \(NSLocalizedString("You're looking currently looking at content rated", comment: "")) \(rating.displayName).")
         }
         
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
+        
+        
         
         for rating in self.ratings
         {
@@ -41,7 +43,7 @@ class RatingController: NSObject, SettingsDetailController {
             
             var style: UIAlertActionStyle = .default
             
-            if rating == self.apiClient?.rating
+            if let current = currentSetting, rating == Rating(rawValue: current)
             {
                 style = .cancel
             }

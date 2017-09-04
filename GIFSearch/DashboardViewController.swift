@@ -22,7 +22,7 @@ class DashboardViewController: UIViewController, UICollectionViewDataSource, UIC
     private let speechController = SpeechController()
     
     /// The settings controller coordinates display of the settings screens.
-    private lazy var settingsController: SettingsController = SettingsController(with: self, and: self.viewModel.apiClient)
+    private lazy var settingsController: SettingsController = SettingsController(with: self)
     
     // MARK: - View Lifecycle
     

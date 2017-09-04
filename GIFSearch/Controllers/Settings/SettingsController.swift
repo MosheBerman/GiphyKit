@@ -16,9 +16,6 @@ class SettingsController: NSObject {
     /// The view controller to present in.
     private weak var presentingViewController: UIViewController?
     
-    /// The API client we need to modify settings.
-    weak var apiClient: GiphyAPIClient?
-    
     // MARK: - Settings Detail Controllers
     
     private let ratingController: RatingController = RatingController()
@@ -26,10 +23,9 @@ class SettingsController: NSObject {
     
     // MARK: - Initializing a Settings Controller
     
-    init(with viewController: UIViewController, and apiClient: GiphyAPIClient)
+    init(with viewController: UIViewController)
     {
         self.presentingViewController = viewController
-        self.apiClient = apiClient
         
         super.init()
     }
@@ -91,8 +87,6 @@ class SettingsController: NSObject {
             print("\(self.self): We don't have a reference to the presenting view controller. Can't present without it, bailing.")
             return
         }
-        var settingsViewController = settingsViewController
-        settingsViewController.apiClient = self.apiClient
         
         let alertController = settingsViewController.viewController
         presentingViewController.present(alertController, animated: true, completion: nil)

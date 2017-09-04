@@ -43,7 +43,7 @@ class LanguageController: NSObject, SettingsDetailController {
             
             var style: UIAlertActionStyle = .default
             
-            if language == self.apiClient?.language
+            if let preferredLanguage = Preferences.shared.preference(for: .language), language.rawValue == preferredLanguage
             {
                 style = .cancel
             }
