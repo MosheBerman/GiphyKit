@@ -16,7 +16,7 @@
 		460F90CB1F5D92FF000AC280 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460F90CA1F5D92FF000AC280 /* Preferences.swift */; };
 		460F90CD1F5D9404000AC280 /* PreferencesKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460F90CC1F5D9404000AC280 /* PreferencesKey.swift */; };
 		460F90CF1F5D94C2000AC280 /* NotificationName+Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460F90CE1F5D94C2000AC280 /* NotificationName+Preferences.swift */; };
-		460F90D21F5D9593000AC280 /* DashboardViewController+Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460F90D11F5D9593000AC280 /* DashboardViewController+Preferences.swift */; };
+		460F90D21F5D9593000AC280 /* DashboardViewModel+Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460F90D11F5D9593000AC280 /* DashboardViewModel+Preferences.swift */; };
 		4635622D1F5320020088119C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4635622C1F5320020088119C /* AppDelegate.swift */; };
 		4635622F1F5320020088119C /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4635622E1F5320020088119C /* DashboardViewController.swift */; };
 		463562321F5320020088119C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 463562301F5320020088119C /* Main.storyboard */; };
@@ -105,7 +105,7 @@
 		460F90CA1F5D92FF000AC280 /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Preferences.swift; path = Model/Preferences.swift; sourceTree = "<group>"; };
 		460F90CC1F5D9404000AC280 /* PreferencesKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesKey.swift; path = Model/PreferencesKey.swift; sourceTree = "<group>"; };
 		460F90CE1F5D94C2000AC280 /* NotificationName+Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NotificationName+Preferences.swift"; path = "Extensions/NotificationName+Preferences.swift"; sourceTree = "<group>"; };
-		460F90D11F5D9593000AC280 /* DashboardViewController+Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DashboardViewController+Preferences.swift"; path = "Controllers/ViewControllers/DashboardViewController+Preferences.swift"; sourceTree = "<group>"; };
+		460F90D11F5D9593000AC280 /* DashboardViewModel+Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DashboardViewModel+Preferences.swift"; path = "Controllers/ViewControllers/DashboardViewModel+Preferences.swift"; sourceTree = "<group>"; };
 		463562291F5320020088119C /* GIFSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GIFSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4635622C1F5320020088119C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4635622E1F5320020088119C /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
@@ -274,6 +274,7 @@
 			children = (
 				4635624C1F5322430088119C /* DashboardViewModel.swift */,
 				463562BF1F5653BF0088119C /* DashboardViewModel+CollectionView.swift */,
+				460F90D11F5D9593000AC280 /* DashboardViewModel+Preferences.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -283,7 +284,6 @@
 			children = (
 				4635622E1F5320020088119C /* DashboardViewController.swift */,
 				460F90B31F5C83EB000AC280 /* DashboardViewController+Search.swift */,
-				460F90D11F5D9593000AC280 /* DashboardViewController+Preferences.swift */,
 				463562301F5320020088119C /* Main.storyboard */,
 			);
 			name = "View Controllers";
@@ -565,7 +565,7 @@
 				463562C01F5653BF0088119C /* DashboardViewModel+CollectionView.swift in Sources */,
 				460F90C81F5D859C000AC280 /* SettingsController.swift in Sources */,
 				460F90CF1F5D94C2000AC280 /* NotificationName+Preferences.swift in Sources */,
-				460F90D21F5D9593000AC280 /* DashboardViewController+Preferences.swift in Sources */,
+				460F90D21F5D9593000AC280 /* DashboardViewModel+Preferences.swift in Sources */,
 				4635622F1F5320020088119C /* DashboardViewController.swift in Sources */,
 				460F90C21F5D5DF7000AC280 /* RatingController.swift in Sources */,
 				46ECAA771F572903003D7564 /* GIFCollectionViewCell.swift in Sources */,
