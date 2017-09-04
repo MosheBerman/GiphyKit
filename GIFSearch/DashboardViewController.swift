@@ -206,6 +206,8 @@ class DashboardViewController: UIViewController, UICollectionViewDataSource, UIC
         self.showRatings()
     }
     
+    
+    /// Display a ratings alert controller.
     func showRatings()
     {
         self.ratingController.apiClient = self.viewModel.apiClient
