@@ -46,8 +46,8 @@ class RatingController: NSObject, SettingsDetailController {
                 style = .cancel
             }
             
-            let actionItem = UIAlertAction(title: title, style: style, handler: { [weak self](action:UIAlertAction) in
-                self?.apiClient?.rating = rating
+            let actionItem = UIAlertAction(title: title, style: style, handler: { (action:UIAlertAction) in
+                Preferences.shared.set(preference: rating.rawValue, for: .rating)
             })
             
             alertController.addAction(actionItem)

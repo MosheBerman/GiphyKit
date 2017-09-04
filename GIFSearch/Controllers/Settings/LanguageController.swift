@@ -48,8 +48,8 @@ class LanguageController: NSObject, SettingsDetailController {
                 style = .cancel
             }
             
-            let actionItem = UIAlertAction(title: title, style: style, handler: { [weak self](action:UIAlertAction) in
-                self?.apiClient?.language = language
+            let actionItem = UIAlertAction(title: title, style: style, handler: { (action:UIAlertAction) in
+                Preferences.shared.set(preference: language.rawValue, for: .language)
             })
             
             alertController.addAction(actionItem)
