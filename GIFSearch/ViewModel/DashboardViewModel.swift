@@ -59,6 +59,10 @@ class DashboardViewModel: NSObject {
         
         self.apiClient = GiphyAPIClient(with: self.apiKey)
         super.init()
+        
+        self.loadPreferences()
+        let name = .PreferencesChanged
+        NotificationCenter.default.addObserver(self, selector: #selector(handlePreferencesChanged(notification:)), name: name, object: nil)
     }
     
     
