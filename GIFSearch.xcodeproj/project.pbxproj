@@ -8,10 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		460F90B41F5C83EB000AC280 /* DashboardViewController+Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460F90B31F5C83EB000AC280 /* DashboardViewController+Search.swift */; };
-		460F90B61F5C871B000AC280 /* Readme.md in Sources */ = {isa = PBXBuildFile; fileRef = 460F90B51F5C871B000AC280 /* Readme.md */; };
 		460F90BC1F5CD338000AC280 /* GiphyLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460F90BB1F5CD338000AC280 /* GiphyLayout.swift */; };
 		460F90BF1F5D5DE1000AC280 /* LanguageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460F90BE1F5D5DE1000AC280 /* LanguageController.swift */; };
 		460F90C21F5D5DF7000AC280 /* RatingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460F90C11F5D5DF7000AC280 /* RatingController.swift */; };
+		460F90C61F5D8304000AC280 /* SettingsDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460F90C51F5D8304000AC280 /* SettingsDetailController.swift */; };
+		460F90C81F5D859C000AC280 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460F90C71F5D859C000AC280 /* SettingsController.swift */; };
 		4635622D1F5320020088119C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4635622C1F5320020088119C /* AppDelegate.swift */; };
 		4635622F1F5320020088119C /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4635622E1F5320020088119C /* DashboardViewController.swift */; };
 		463562321F5320020088119C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 463562301F5320020088119C /* Main.storyboard */; };
@@ -94,6 +95,9 @@
 		460F90BB1F5CD338000AC280 /* GiphyLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GiphyLayout.swift; path = View/UICollectionViewLayout/GiphyLayout.swift; sourceTree = "<group>"; };
 		460F90BE1F5D5DE1000AC280 /* LanguageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LanguageController.swift; path = Controllers/Settings/LanguageController.swift; sourceTree = "<group>"; };
 		460F90C11F5D5DF7000AC280 /* RatingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RatingController.swift; path = Controllers/Settings/RatingController.swift; sourceTree = "<group>"; };
+		460F90C51F5D8304000AC280 /* SettingsDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsDetailController.swift; path = Controllers/Settings/SettingsDetailController.swift; sourceTree = "<group>"; };
+		460F90C71F5D859C000AC280 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsController.swift; path = Controllers/Settings/SettingsController.swift; sourceTree = "<group>"; };
+		460F90C91F5D8C51000AC280 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		463562291F5320020088119C /* GIFSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GIFSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4635622C1F5320020088119C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4635622E1F5320020088119C /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
@@ -184,6 +188,8 @@
 		460F90C01F5D5DE5000AC280 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				460F90C71F5D859C000AC280 /* SettingsController.swift */,
+				460F90C51F5D8304000AC280 /* SettingsDetailController.swift */,
 				460F90BE1F5D5DE1000AC280 /* LanguageController.swift */,
 				460F90C11F5D5DF7000AC280 /* RatingController.swift */,
 			);
@@ -194,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				460F90B51F5C871B000AC280 /* Readme.md */,
+				460F90C91F5D8C51000AC280 /* CHANGELOG.md */,
 				4635622B1F5320020088119C /* GIFSearch */,
 				463562401F5320020088119C /* GIFSearchTests */,
 				4635627D1F5627590088119C /* GiphyKit */,
@@ -536,17 +543,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				463562C01F5653BF0088119C /* DashboardViewModel+CollectionView.swift in Sources */,
+				460F90C81F5D859C000AC280 /* SettingsController.swift in Sources */,
 				4635622F1F5320020088119C /* DashboardViewController.swift in Sources */,
 				460F90C21F5D5DF7000AC280 /* RatingController.swift in Sources */,
 				46ECAA771F572903003D7564 /* GIFCollectionViewCell.swift in Sources */,
 				4635624D1F5322430088119C /* DashboardViewModel.swift in Sources */,
 				4635622D1F5320020088119C /* AppDelegate.swift in Sources */,
+				460F90C61F5D8304000AC280 /* SettingsDetailController.swift in Sources */,
 				460F90BC1F5CD338000AC280 /* GiphyLayout.swift in Sources */,
 				460F90BF1F5D5DE1000AC280 /* LanguageController.swift in Sources */,
 				4635625F1F546F070088119C /* APIKey.swift in Sources */,
 				460F90B41F5C83EB000AC280 /* DashboardViewController+Search.swift in Sources */,
 				46ECAA7A1F573247003D7564 /* SpeechController.swift in Sources */,
-				460F90B61F5C871B000AC280 /* Readme.md in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -3,6 +3,9 @@
 A Giphy API client that shows trending and search results. 
 
 ## Running It 
+
+The demo app requires iOS 10.3 or later to run.
+
 To run the giphy client, follow these steps:
 1. Check out this repo: `git clone https://github.com/MosheBerman/GiphyKit.git`
 2. Go to https://developers.giphy.com and set up an app, and grab your API key.
