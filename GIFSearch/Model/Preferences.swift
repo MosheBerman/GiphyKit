@@ -29,7 +29,7 @@ class Preferences: NSObject {
     func set(preference: String, for key: PreferencesKey)
     {
         UserDefaults.standard.set(preference, forKey: key.rawValue)
-        NotificationCenter.default.post(name: Notification.Name.PreferencesChanged, object: key)
+        NotificationCenter.default.post(name: Notification.Name.PreferencesChanged, object: nil, userInfo:[key:preference])
     }
     
     // MARK: - Accessing a Specific Preference
