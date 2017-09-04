@@ -25,7 +25,13 @@ class RatingController: NSObject {
     var alertController: UIAlertController
     {
         let title = NSLocalizedString("Content Rating", comment: "The title for the rating picker.")
-        let message = NSLocalizedString("Choose the content rating you wish to see.", comment: "A message for the content picker.")
+        var message = NSLocalizedString("Choose the content rating you wish to see.", comment: "A message for the content picker.")
+        
+        if let client = self.apiClient
+        {
+            message.append(" \(NSLocalizedString("You're looking currently looking at content rated", comment: "")) \(client.rating.displayName).")
+        }
+        
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
         
         for rating in self.ratings
