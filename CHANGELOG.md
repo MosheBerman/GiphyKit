@@ -4,7 +4,7 @@
 - Added a changelog
 - Added a note to the readme about the API key.
 - Added a note to the readme about minimum iOS requirements.
-- Added settings menu to choose API language and rating.
+- Added settings menu to choose API language and rating. Changing settings causes the app to refresh.
 
 ## [1.0.0] 2017-09-04
 ### Added
