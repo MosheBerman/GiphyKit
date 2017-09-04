@@ -24,9 +24,6 @@ class DashboardViewController: UIViewController, UICollectionViewDataSource, UIC
         self.configureCollectionView()
         self.configureSearchBar()
         self.viewModel.setNeedsRefresh()
-        
-        
-        
         self.configureButtons()
     }
     
@@ -44,7 +41,6 @@ class DashboardViewController: UIViewController, UICollectionViewDataSource, UIC
     {
         self.configure(collectionView: self.collectionView)
         self.configure(collectionView: self.backgroundCollectionView)
-        self.collectionView.delegate = self
         
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
@@ -54,6 +50,7 @@ class DashboardViewController: UIViewController, UICollectionViewDataSource, UIC
     func configure(collectionView: UICollectionView)
     {
         collectionView.dataSource = self
+        collectionView.delegate = self
         
         let layout = GiphyLayout()
         layout.scrollDirection = .vertical
@@ -144,39 +141,32 @@ class DashboardViewController: UIViewController, UICollectionViewDataSource, UIC
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         
-        if collectionView == self.backgroundCollectionView
-        {
-            return
-        }
-        
         let cell = cell as! GIFCollectionViewCell 
         
-        if let hashtags = self.viewModel.hashtags(for: indexPath)
+        if collectionView == self.collectionView
         {
-            cell.hashtags.text = hashtags
-            cell.hashtagsPanel.alpha = 1.0
-        }
-        else
-        {
-            cell.hashtagsPanel.alpha = 0.0
+            if let hashtags = self.viewModel.hashtags(for: indexPath)
+            {
+                cell.hashtags.text = hashtags
+                cell.hashtagsPanel.alpha = 1.0
+            }
+            else
+            {
+                cell.hashtagsPanel.alpha = 0.0
+            }
         }
         
-        let _ = self.viewModel.gif(for: indexPath) { [weak self](data: Data?, originalIndexPath: IndexPath) in
+        let _ = self.viewModel.gif(for: indexPath) { (data: Data?, originalIndexPath: IndexPath) in
             DispatchQueue.main.async {
                 if indexPath == originalIndexPath
                 {
                     if let data = data
                     {
                         let image =  UIImage.gif(from: data)
-                        if let cell = self?.collectionView?.cellForItem(at: originalIndexPath) as? GIFCollectionViewCell
+                        if let cell = collectionView.cellForItem(at: originalIndexPath) as? GIFCollectionViewCell
                         {
                             
                             cell.staticImageView.image = image
-                        }
-                        
-                        if let shadowCell = self?.backgroundCollectionView?.cellForItem(at: indexPath) as? GIFCollectionViewCell
-                        {
-                            shadowCell.staticImageView.image = image
                         }
                     }
                 }
@@ -188,7 +178,10 @@ class DashboardViewController: UIViewController, UICollectionViewDataSource, UIC
     // MARK: - UIScrollViewDelegate
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        self.backgroundCollectionView.contentOffset = self.collectionView.contentOffset
+        if scrollView == self.collectionView
+        {
+            self.backgroundCollectionView.contentOffset = self.collectionView.contentOffset
+        }
     }
     
     // MARK: - Speak
