@@ -12,12 +12,19 @@ class DashboardViewController: UIViewController, UICollectionViewDataSource, UIC
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var collectionView: UICollectionView!
-    
     @IBOutlet weak var backgroundCollectionView: UICollectionView!
+    
+    
+    /// The data model. Internal so the extension can access it.
     internal let viewModel = DashboardViewModel()
+    
+    /// The speech controller pronounces GIF and other gimmickery.
     private let speechController = SpeechController()
-    private let ratingController = RatingController()
-    private let languageController = LanguageController()
+    
+    /// The settings controller coordinates display of the settings screens.
+    private lazy var settingsController: SettingsController = SettingsController(with: self, and: self.viewModel.apiClient)
+    
+    // MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +46,7 @@ class DashboardViewController: UIViewController, UICollectionViewDataSource, UIC
     }
     
     // MARK: - Configuring the Collection View
+    
     func configureCollectionView()
     {
         self.configure(collectionView: self.collectionView)
@@ -83,7 +91,7 @@ class DashboardViewController: UIViewController, UICollectionViewDataSource, UIC
     
     func configureButtons()
     {
-        let speakButton = UIBarButtonItem(title: "💬🎧", style: .plain, target: self, action: #selector(speak))
+        let speakButton = UIBarButtonItem(title: "💬 (🎧)", style: .plain, target: self, action: #selector(speak))
         self.navigationItem.rightBarButtonItem = speakButton
         
         let settingsButton = UIBarButtonItem(title: "⚙️", style: .plain, target: self, action: #selector(showSettings))
@@ -203,18 +211,9 @@ class DashboardViewController: UIViewController, UICollectionViewDataSource, UIC
     /// For now, just skip to ratings.
     func showSettings()
     {
-        self.showRatings()
+        self.settingsController.present()
     }
     
-    
-    /// Display a ratings alert controller.
-    func showRatings()
-    {
-        self.ratingController.apiClient = self.viewModel.apiClient
-        
-        let alertController = self.ratingController.alertController
-        self.present(alertController, animated: true, completion: nil)
-    }
-    
+
 }
 
