@@ -12,7 +12,10 @@ class Preferences: NSObject {
 
     // MARK: - Singleton Access
     static let shared = Preferences()
-    private override init() { }
+    private override init() {
+        super.init()
+        self.registerDefaults()
+    }
     
     // MARK: - Default Preferences
     
