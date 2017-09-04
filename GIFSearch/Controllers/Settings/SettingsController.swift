@@ -14,10 +14,10 @@ class SettingsController: NSObject {
     // MARK: - External Things We Need to Present
 
     /// The view controller to present in.
-    private let presentingViewController: UIViewController?
+    private weak var presentingViewController: UIViewController?
     
     /// The API client we need to modify settings.
-    private let apiClient: GiphyAPIClient?
+    weak var apiClient: GiphyAPIClient?
     
     // MARK: - Settings Detail Controllers
     
@@ -30,6 +30,7 @@ class SettingsController: NSObject {
     {
         self.presentingViewController = viewController
         self.apiClient = apiClient
+        
         super.init()
     }
     
@@ -49,11 +50,6 @@ class SettingsController: NSObject {
         let alertController = UIAlertController(title: title, message: nil, preferredStyle: .actionSheet)
         
         let languageItem = UIAlertAction(title: self.languageController.title, style: .default) { [weak self] (action: UIAlertAction) in
-            guard let presentingViewController = self?.presentingViewController else
-            {
-                print("\(self!.self): We don't have a reference to the presenting view controller. Can't present without it, bailing.")
-                return
-            }
             
             guard let languageController = self?.languageController else
             {
@@ -61,15 +57,10 @@ class SettingsController: NSObject {
                 return
             }
             
-            presentingViewController.present(languageController.viewController, animated: true, completion: nil)
+            self?.present(settingsViewController: languageController)
         }
 
         let ratingItem = UIAlertAction(title: self.ratingController.title, style: .default) { [weak self] (action: UIAlertAction) in
-            guard let presentingViewController = self?.presentingViewController else
-            {
-                print("\(self!.self): We don't have a reference to the presenting view controller. Can't present without it, bailing.")
-                return
-            }
             
             guard let ratingController = self?.ratingController else
             {
@@ -77,7 +68,7 @@ class SettingsController: NSObject {
                 return
             }
             
-            presentingViewController.present(ratingController.viewController, animated: true, completion: nil)
+            self?.present(settingsViewController: ratingController)
             
         }
 
