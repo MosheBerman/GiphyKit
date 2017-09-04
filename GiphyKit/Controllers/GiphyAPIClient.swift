@@ -28,7 +28,7 @@ public class GiphyAPIClient: NSObject {
     
     
     // MARK: - Filtering by Region
-    public var language: LanguageCode = .unitedStates
+    public var language: LanguageCode = .english
     
     
     // MARK: - Initializing the API Client
