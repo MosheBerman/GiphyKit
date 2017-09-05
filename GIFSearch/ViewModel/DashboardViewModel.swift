@@ -61,7 +61,7 @@ class DashboardViewModel: NSObject {
         super.init()
         
         self.loadPreferences()
-        let name = .PreferencesChanged
+        let name = Notification.Name.PreferencesChanged
         NotificationCenter.default.addObserver(self, selector: #selector(handlePreferencesChanged(notification:)), name: name, object: nil)
     }
     
