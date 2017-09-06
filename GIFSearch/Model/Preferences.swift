@@ -23,7 +23,7 @@ class Preferences: NSObject {
     func registerDefaults()
     {
         UserDefaults.standard.register(defaults: [
-            PreferencesKey.rating.rawValue : "g",
+            PreferencesKey.rating.rawValue : "G",
             PreferencesKey.language.rawValue : "en"
             ])
     }
