@@ -1,13 +1,18 @@
-# GIPHYSearch
+# GiphyKit + Demo App
 
-A Giphy API client that shows trending and search results. 
+A Giphy API framework and a demo client that shows trending and search results. 
+
+This was done as an interview take-home prompt, so:
+- The contents of the Readme focuses interview-y things, not integration or documentation. 
+- The code is pretty well documented, so look at it for more on that.
+- I haven't taken time to set up support for any package managers. Drop the GiphyKit folder into your project to use GiphyKit.
 
 ## Running It 
 
 To run the giphy client, follow these steps:
 1. Check out this repo: `git clone https://github.com/MosheBerman/GiphyKit.git`
 2. Go to https://developers.giphy.com and set up an app, and grab your API key.
-3. In DashboardViewModel.swift, add your API key. (On line 20.) 
+3. In APIKey.swift, add your key. 
 4. Build and run.
 
 The demo app requires iOS 10.3 or later to run.
@@ -51,7 +56,7 @@ I switched to the rendition called "preview_GIF" which supplies a nice and small
 
 There were three options for this:
 
-**1.ImageIO and Framerate Trickery**
+**1. ImageIO and Framerate Trickery**
 
 Apple shipped [some sample code][1] for animated GIFs with iOS 11, but I didn't see it until after I implemented it myself.
 I based my code on [Rob Mayoff's Objective-C code][2] and [Arne Bahlo's Swift implementation][3]. (Bahlo's Swift port led me to ImageIO, and Mayoff's original. I started with the ImageIO docs, and then referenced Mayoff's code for variable framerate support.) Mayoff bases his variable framerate support on [Diego Peinador's implementation][4], which has a pretty cool algorithm:
