@@ -24,7 +24,6 @@
 		463562371F5320020088119C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 463562351F5320020088119C /* LaunchScreen.storyboard */; };
 		463562421F5320020088119C /* GIFSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463562411F5320020088119C /* GIFSearchTests.swift */; };
 		4635624D1F5322430088119C /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4635624C1F5322430088119C /* DashboardViewModel.swift */; };
-		4635625F1F546F070088119C /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4635625E1F546F070088119C /* APIKey.swift */; };
 		463562851F5627590088119C /* GiphyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4635627C1F5627590088119C /* GiphyKit.framework */; };
 		4635628C1F5627590088119C /* GiphyKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4635628B1F5627590088119C /* GiphyKitTests.swift */; };
 		4635628E1F56275A0088119C /* GiphyKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 4635627E1F5627590088119C /* GiphyKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -46,6 +45,7 @@
 		46ECAA7A1F573247003D7564 /* SpeechController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46ECAA791F573247003D7564 /* SpeechController.swift */; };
 		46ECAAB41F5A0ECB003D7564 /* UIImage+GIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46ECAAB31F5A0ECB003D7564 /* UIImage+GIF.swift */; };
 		46ECAAB61F5BC3F1003D7564 /* gcd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46ECAAB51F5BC3F1003D7564 /* gcd.swift */; };
+		F5BE0C461F62FF8B0013C1FF /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BE0C451F62FF8B0013C1FF /* APIKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,7 +117,6 @@
 		463562411F5320020088119C /* GIFSearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIFSearchTests.swift; sourceTree = "<group>"; };
 		463562431F5320020088119C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4635624C1F5322430088119C /* DashboardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DashboardViewModel.swift; path = ViewModel/DashboardViewModel.swift; sourceTree = "<group>"; };
-		4635625E1F546F070088119C /* APIKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIKey.swift; path = Model/APIKey.swift; sourceTree = "<group>"; };
 		4635627C1F5627590088119C /* GiphyKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GiphyKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4635627E1F5627590088119C /* GiphyKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GiphyKit.h; sourceTree = "<group>"; };
 		4635627F1F5627590088119C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -140,6 +139,7 @@
 		46ECAA791F573247003D7564 /* SpeechController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpeechController.swift; path = Controllers/Speech/SpeechController.swift; sourceTree = "<group>"; };
 		46ECAAB31F5A0ECB003D7564 /* UIImage+GIF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+GIF.swift"; path = "Extensions/UIKit/UIImage+GIF.swift"; sourceTree = "<group>"; };
 		46ECAAB51F5BC3F1003D7564 /* gcd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = gcd.swift; path = Math/gcd.swift; sourceTree = "<group>"; };
+		F5BE0C451F62FF8B0013C1FF /* APIKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIKey.swift; path = Model/APIKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -301,8 +301,8 @@
 		463562551F5322F20088119C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4635625E1F546F070088119C /* APIKey.swift */,
 				460F90CA1F5D92FF000AC280 /* Preferences.swift */,
+				F5BE0C451F62FF8B0013C1FF /* APIKey.swift */,
 				460F90CC1F5D9404000AC280 /* PreferencesKey.swift */,
 			);
 			name = Model;
@@ -576,9 +576,9 @@
 				460F90BC1F5CD338000AC280 /* GiphyLayout.swift in Sources */,
 				460F90BF1F5D5DE1000AC280 /* LanguageController.swift in Sources */,
 				460F90CD1F5D9404000AC280 /* PreferencesKey.swift in Sources */,
-				4635625F1F546F070088119C /* APIKey.swift in Sources */,
 				460F90B41F5C83EB000AC280 /* DashboardViewController+Search.swift in Sources */,
 				46ECAA7A1F573247003D7564 /* SpeechController.swift in Sources */,
+				F5BE0C461F62FF8B0013C1FF /* APIKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
