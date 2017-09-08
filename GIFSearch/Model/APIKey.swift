@@ -9,18 +9,23 @@
 import Foundation
 
 /**
- Get an API key from https://developers.giphy.com/dashboard/
  
- Before saving it here, you might want to tell git to 
- ignore future changes to this file, so you don't commit
- your API key back to your repository.
+ There are three steps to getting this working:
  
- Do that with this command:
+ 1. Get an API key from https://developers.giphy.com/dashboard/
  
- > cd /path/to/GiphyKit/
- > git update-index --assume-unchanged ./GIFSearch/Model/APIKey.swift
+ 2. Before saving it here, you want to tell git to
+    ignore future changes to this file, so you don't commit
+    your API key back to your repository.
  
- Read more about how this works here: https://stackoverflow.com/a/18277622/224988
+    Do that with this command:
+ 
+    > cd /path/to/GiphyKit/
+    > git update-index --assume-unchanged ./GIFSearch/Model/APIKey.swift
+ 
+    Read more about how this works here: https://stackoverflow.com/a/18277622/224988
+ 
+ 3. Replace the placeholder token with your API key. 
  
  You should be all set!
  
